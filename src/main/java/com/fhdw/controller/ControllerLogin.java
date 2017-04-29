@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ControllerLogin {
-    @RequestMapping("/")
+    @RequestMapping("/login")
 
     public ModelAndView login(){
         ModelAndView mav = new ModelAndView("login");

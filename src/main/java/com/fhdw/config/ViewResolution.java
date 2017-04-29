@@ -7,7 +7,7 @@ package com.fhdw.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -17,7 +17,8 @@ import org.thymeleaf.templateresolver.UrlTemplateResolver;
 
 @Configuration
 
-public class viewresolution extends WebMvcConfigurerAdapter{
+public class ViewResolution extends WebMvcConfigurerAdapter{
+
     @Bean
     public ViewResolver viewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
@@ -41,6 +42,11 @@ public class viewresolution extends WebMvcConfigurerAdapter{
         resolver.setTemplateMode("HTML5");
         resolver.setCacheable(false);
         return resolver;
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("login");
     }
 
     private UrlTemplateResolver urlTemplateResolver(){

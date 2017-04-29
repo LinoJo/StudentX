@@ -21,11 +21,11 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.security:spring-security-web:5.0.0.BUILD-SNAPSHOT')
+	compile("org.springframework.boot:spring-boot-starter-security")
+	compile('org.hibernate:hibernate-core:5.2.10.Final')
 	runtime('org.apache.derby:derby')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
