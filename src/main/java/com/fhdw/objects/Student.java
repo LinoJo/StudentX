@@ -4,25 +4,32 @@ package com.fhdw.objects;
  * Created by timon on 02.05.2017.
  */
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javassist.bytecode.ByteArray;
+import javax.persistence.*;
+import java.util.Date;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity // Hibernate erstellt eine Tabelle aus dieser Klasse
 public class Student extends Person {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer MatrikelID;
+    private Long MatrikelID;
     private Integer StudienGruppenID;
     private String Praxisfirma;
 
-    public Integer getMatrikelID() {
+    protected Student(){}
+
+    public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, ByteArray profilbild, Boolean activated, Integer studienGruppenID, String praxisfirma) {
+        super(vorname, nachname, geschlecht, email, geburtsdatum, PLZ, ort, straße, profilbild, activated);
+        StudienGruppenID = studienGruppenID;
+        Praxisfirma = praxisfirma;
+    }
+
+    public Long getMatrikelID() {
         return MatrikelID;
     }
 
-    public void setMatrikelID(Integer matrikelID) {
+    public void setMatrikelID(Long matrikelID) {
         MatrikelID = matrikelID;
     }
 

@@ -1,11 +1,19 @@
 package com.fhdw.objects;
 
-import java.util.Date;
-
 /**
  * Created by timon on 02.05.2017.
  */
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Date;
+
+@Entity // Hibernate erstellt eine Tabelle aus dieser Klasse
 public class Studiengruppe {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer StudiengruppenID;
     private Integer MentorID;
     private String StudiengruppeName;
@@ -13,6 +21,8 @@ public class Studiengruppe {
     private String AbschlussTitel;
     private Date StartDatum;
     private Date EndeDatum;
+
+    protected Studiengruppe(){};
 
     public Studiengruppe(Integer studiengruppenID, Integer mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
         StudiengruppenID = studiengruppenID;

@@ -7,6 +7,7 @@ import java.util.Date;
 /**
  * Created by timon on 02.05.2017.
  */
+
 public class Person {
 
     private String Vorname;
@@ -20,7 +21,20 @@ public class Person {
     private ByteArray Profilbild;
     private Boolean Activated;
 
+    protected Person(){}
 
+    public Person(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, ByteArray profilbild, Boolean activated) {
+        Vorname = vorname;
+        Nachname = nachname;
+        Geschlecht = geschlecht;
+        Email = email;
+        Geburtsdatum = geburtsdatum;
+        this.PLZ = PLZ;
+        Ort = ort;
+        Straße = straße;
+        Profilbild = profilbild;
+        Activated = activated;
+    }
 
     public String getVorname() {
         return Vorname;
