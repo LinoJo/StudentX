@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by timon on 02.05.2017.
  */
-public class studiengruppe {
+public class Studiengruppe {
     private Integer StudiengruppenID;
     private Integer MentorID;
     private String StudiengruppeName;
@@ -14,7 +14,7 @@ public class studiengruppe {
     private Date StartDatum;
     private Date EndeDatum;
 
-    public studiengruppe(Integer studiengruppenID, Integer mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
+    public Studiengruppe(Integer studiengruppenID, Integer mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
         StudiengruppenID = studiengruppenID;
         MentorID = mentorID;
         StudiengruppeName = studiengruppeName;

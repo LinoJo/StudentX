@@ -3,7 +3,7 @@ package com.fhdw.objects;
 /**
  * Created by timon on 02.05.2017.
  */
-public class mitarbeiter extends person{
+public class Mitarbeiter extends Person {
     private Integer MitarbeiterID;
     private Integer Position; // 1 = Mitarbeiter | 2 = Mentor
 

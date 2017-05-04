@@ -3,7 +3,17 @@ package com.fhdw.objects;
 /**
  * Created by timon on 02.05.2017.
  */
-public class student extends person {
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity // This tells Hibernate to make a table out of this class
+public class Student extends Person {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer MatrikelID;
     private Integer StudienGruppenID;
     private String Praxisfirma;

@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by timon on 02.05.2017.
  */
-public class person {
+public class Person {
 
     private String Vorname;
     private String Nachname;
