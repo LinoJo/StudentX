@@ -24,13 +24,13 @@ public class Mitarbeiter{
     private Integer PLZ;
     private String Ort;
     private String Straße;
-    private Boolean Activated;
+    private String PasswortHash;
     private Integer Position; // 1 = Mitarbeiter | 2 = Mentor
+    private Boolean Activated;
 
-    protected  Mitarbeiter(){}
+    protected Mitarbeiter(){}
 
-    public Mitarbeiter(Long mitarbeiterID, String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, Boolean activated, Integer position) {
-        MitarbeiterID = mitarbeiterID;
+    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwortHash, Integer position, Boolean activated) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -39,8 +39,9 @@ public class Mitarbeiter{
         this.PLZ = PLZ;
         Ort = ort;
         Straße = straße;
-        Activated = activated;
+        PasswortHash = passwortHash;
         Position = position;
+        Activated = activated;
     }
 
     public Long getMitarbeiterID() {
@@ -115,12 +116,12 @@ public class Mitarbeiter{
         Straße = straße;
     }
 
-    public Boolean getActivated() {
-        return Activated;
+    public String getPasswortHash() {
+        return PasswortHash;
     }
 
-    public void setActivated(Boolean activated) {
-        Activated = activated;
+    public void setPasswortHash(String passwortHash) {
+        PasswortHash = passwortHash;
     }
 
     public Integer getPosition() {
@@ -129,6 +130,32 @@ public class Mitarbeiter{
 
     public void setPosition(Integer position) {
         Position = position;
+    }
+
+    public Boolean getActivated() {
+        return Activated;
+    }
+
+    public void setActivated(Boolean activated) {
+        Activated = activated;
+    }
+
+    @Override
+    public String toString() {
+        return "Mitarbeiter{" +
+                "MitarbeiterID=" + MitarbeiterID +
+                ", Vorname='" + Vorname + '\'' +
+                ", Nachname='" + Nachname + '\'' +
+                ", Geschlecht='" + Geschlecht + '\'' +
+                ", Email='" + Email + '\'' +
+                ", Geburtsdatum=" + Geburtsdatum +
+                ", PLZ=" + PLZ +
+                ", Ort='" + Ort + '\'' +
+                ", Straße='" + Straße + '\'' +
+                ", PasswortHash='" + PasswortHash + '\'' +
+                ", Position=" + Position +
+                ", Activated=" + Activated +
+                '}';
     }
 }
 

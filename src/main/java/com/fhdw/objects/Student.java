@@ -137,4 +137,22 @@ public class Student{
     public void setPraxisfirma(String praxisfirma) {
         Praxisfirma = praxisfirma;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "MatrikelID=" + MatrikelID +
+                ", Vorname='" + Vorname + '\'' +
+                ", Nachname='" + Nachname + '\'' +
+                ", Geschlecht='" + Geschlecht + '\'' +
+                ", Email='" + Email + '\'' +
+                ", Geburtsdatum=" + Geburtsdatum +
+                ", PLZ=" + PLZ +
+                ", Ort='" + Ort + '\'' +
+                ", Straße='" + Straße + '\'' +
+                ", Activated=" + Activated +
+                ", StudienGruppenID=" + StudienGruppenID +
+                ", Praxisfirma='" + Praxisfirma + '\'' +
+                '}';
+    }
 }

@@ -89,4 +89,17 @@ public class Studiengruppe {
     public void setEndeDatum(Date endeDatum) {
         EndeDatum = endeDatum;
     }
+
+    @Override
+    public String toString() {
+        return "Studiengruppe{" +
+                "StudiengruppenID=" + StudiengruppenID +
+                ", MentorID=" + MentorID +
+                ", StudiengruppeName='" + StudiengruppeName + '\'' +
+                ", StudiengangName='" + StudiengangName + '\'' +
+                ", AbschlussTitel='" + AbschlussTitel + '\'' +
+                ", StartDatum=" + StartDatum +
+                ", EndeDatum=" + EndeDatum +
+                '}';
+    }
 }
