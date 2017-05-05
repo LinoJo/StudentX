@@ -14,7 +14,7 @@ import java.util.Date;
 public class Studiengruppe {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer StudiengruppenID;
+    private Long StudiengruppenID;
     private Integer MentorID;
     private String StudiengruppeName;
     private String StudiengangName;
@@ -24,7 +24,7 @@ public class Studiengruppe {
 
     protected Studiengruppe(){};
 
-    public Studiengruppe(Integer studiengruppenID, Integer mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
+    public Studiengruppe(Long studiengruppenID, Integer mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
         StudiengruppenID = studiengruppenID;
         MentorID = mentorID;
         StudiengruppeName = studiengruppeName;
@@ -34,11 +34,11 @@ public class Studiengruppe {
         EndeDatum = endeDatum;
     }
 
-    public Integer getStudiengruppenID() {
+    public Long getStudiengruppenID() {
         return StudiengruppenID;
     }
 
-    public void setStudiengruppenID(Integer studiengruppenID) {
+    public void setStudiengruppenID(Long studiengruppenID) {
         StudiengruppenID = studiengruppenID;
     }
 
