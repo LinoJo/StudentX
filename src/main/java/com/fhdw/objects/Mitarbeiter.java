@@ -4,7 +4,6 @@ package com.fhdw.objects;
  * Created by timon on 02.05.2017.
  */
 
-import javassist.bytecode.ByteArray;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
