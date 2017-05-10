@@ -1,4 +1,4 @@
-package com.fhdw.services.security;
+package com.fhdw.services.domain;
 
 import com.fhdw.objects.Student;
 

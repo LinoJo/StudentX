@@ -1,4 +1,4 @@
-package com.fhdw.services.security;
+package com.fhdw.services.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
