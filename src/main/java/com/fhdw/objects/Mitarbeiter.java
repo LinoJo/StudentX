@@ -1,17 +1,15 @@
 package com.fhdw.objects;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
+import java.util.Date;
+import com.fhdw.enums.Role;
+
 /**
  * Created by timon on 02.05.2017.
  */
-
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
-import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
 
 @Entity // Hibernate erstellt eine Tabelle aus dieser Klasse
 public class Mitarbeiter{
@@ -28,13 +26,14 @@ public class Mitarbeiter{
     @Length(min = 5, message = "*Dein Passwort muss 5 Zeichen lang sein")
     @NotEmpty(message = "*Bitte gib ein Passwort ein")
     private String Passwort;
-    private String UserRole;
+    @Enumerated(EnumType.STRING)
+    private Role Role;
     private Integer Position; // 1 = Mitarbeiter | 2 = Mentor
     private Boolean Activated;
 
-    protected Mitarbeiter(){}
+    public Mitarbeiter(){}
 
-    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwort, String userRole, Integer position, Boolean activated) {
+    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwort, Role role, Integer position, Boolean activated) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -44,7 +43,7 @@ public class Mitarbeiter{
         Ort = ort;
         Straße = straße;
         Passwort = passwort;
-        UserRole = userRole;
+        Role = role;
         Position = position;
         Activated = activated;
     }
@@ -121,12 +120,12 @@ public class Mitarbeiter{
         Passwort = passwort;
     }
 
-    public String getUserRole() {
-        return UserRole;
+    public Role getRole() {
+        return Role;
     }
 
-    public void setUserRole(String userRole) {
-        UserRole = userRole;
+    public void setRole(Role role) {
+        Role = role;
     }
 
     public Integer getPosition() {
@@ -148,16 +147,16 @@ public class Mitarbeiter{
     @Override
     public String toString() {
         return "Mitarbeiter{" +
+                "Email='" + Email + '\'' +
                 ", Vorname='" + Vorname + '\'' +
                 ", Nachname='" + Nachname + '\'' +
                 ", Geschlecht='" + Geschlecht + '\'' +
-                ", Email='" + Email + '\'' +
                 ", Geburtsdatum=" + Geburtsdatum +
                 ", PLZ=" + PLZ +
                 ", Ort='" + Ort + '\'' +
                 ", Straße='" + Straße + '\'' +
                 ", Passwort='" + Passwort + '\'' +
-                ", UserRole='" + UserRole + '\'' +
+                ", Role=" + Role +
                 ", Position=" + Position +
                 ", Activated=" + Activated +
                 '}';
