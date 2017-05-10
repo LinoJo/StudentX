@@ -50,8 +50,8 @@
                 <a href="/administration"><i class="fa fa-users"></i> <span class="nav-label">Administration</span></a>
             </li>
             <li sec:authorize="hasRole('ROLE_ADMIN')">
-            <a href="/mitarbeiter"><i class="fa fa-users"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
-        </li>
+                <a href="/mitarbeiter"><i class="fa fa-users"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
+            </li>
         </ul>
 
     </div>
@@ -179,42 +179,29 @@
                     </div>
                     <div class="ibox-content">
 
-                        <table class="table table-striped table-bordered table-hover dataTables-example" >
-                            <thead>
-                            <tr>
-                                <th>Matrikel-Nr.</th>
-                                <th>Vorname</th>
-                                <th>Nachname</th>
-                                <th>Studiengruppe</th>
-                                <th>Edit</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr id="548694655">
-                                <td class="Matikelnummer" 	style="width:*;" value="548694655">548694655</td>
-                                <td class="Vorname" 		style="width:*;" value="Linus">Linus</td>
-                                <td class="Nachname" 		style="width:*;" value="Jolmes">Jolmes</td>
-                                <td class="Studiengruppe" 	style="width:*;" value="pfba415b">PFBA415B</td>
-                                <td style="width:10px"><button type="button" id="548694655" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="padding:6px 8px;margin 0 auto;" onclick="modalLoadData()"><i class="fa fa-edit"></i></button></td>
-                            </tr>
-                            <tr id="548694655">
-                                <td class="Matikelnummer" 	style="width:*;" value="548694654">548694654</td>
-                                <td class="Vorname" 		style="width:*;" value="Timon">Timon</td>
-                                <td class="Nachname" 		style="width:*;" value="Caspari">Caspari</td>
-                                <td class="Studiengruppe" 	style="width:*;" value="pfba415b">PFBA415B</td>
-                                <td style="width:10px"><button type="button" id="548694654" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="padding:6px 8px;margin 0 auto;" onclick="modalLoadData()"><i class="fa fa-edit"></i></button></td>
-                            </tr>
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>Matrikel-Nr.</th>
-                                <th>Vorname</th>
-                                <th>Nachname</th>
-                                <th>Studiengruppe</th>
-                                <th>Edit</th>
-                            </tr>
-                            </tfoot>
-                        </table>
+                        <div>
+                            <div style="border:2px solid #1ab394; border-radius: 5px; float:left;width: 30%;">
+                                text1
+                            </div>
+                            <div style="border:2px solid #1ab394; border-radius: 5px;width: 30%;">
+                                text2
+                            </div>
+                            <div style="border:2px solid #1ab394; border-radius: 5px; float: right;width: 30%;">
+                                text3
+                            </div>
+                        </div>
+                        <div>
+                            <div style="border:2px solid #1ab394; border-radius: 5px; float:left;width: 30%;">
+                                text4
+                            </div>
+                            <div style="border:2px solid #1ab394; border-radius: 5px;width: 30%;">
+                                text5
+                            </div>
+                            <div style="border:2px solid #1ab394; border-radius: 5px; float: right; width: 30%;">
+                                text6
+                            </div>
+                        </div>
+
                     </div>
                     <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
