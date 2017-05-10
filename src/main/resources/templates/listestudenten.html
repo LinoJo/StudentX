@@ -46,6 +46,9 @@
             <li class="active">
                 <a href="/studenten"><i class="fa fa-users"></i> <span class="nav-label">Studentenübersicht</span></a>
             </li>
+            <li sec:authorize="hasRole('ROLE_ADMIN')">
+                <a href="/administration"><i class="fa fa-users"></i> <span class="nav-label">Administration</span></a>
+            </li>
         </ul>
 
     </div>

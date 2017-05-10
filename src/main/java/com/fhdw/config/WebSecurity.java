@@ -15,9 +15,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter{
-    @Autowired
-    DataSource dataSource;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -49,10 +46,5 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
                     .withUser("admin")
                         .password("password")
                         .roles("ADMIN","USER");
-        auth
-                .jdbcAuthentication()
-                    .dataSource(dataSource)
-                    .usersByUsernameQuery("select EMAIL,PASSWORT_HASH, ACTIVATED from MITARBEITER where EMAIL=?")
-                    .authoritiesByUsernameQuery("select EMAIL, ROLLE from MITARBEITER_ROLLEN where EMAIL=?");
-    }
+        }
 }
