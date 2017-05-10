@@ -29,14 +29,14 @@ public class Mitarbeiter{
     private String Straße;
     @Length(min = 5, message = "*Dein Passwort muss 5 Zeichen lang sein")
     @NotEmpty(message = "*Bitte gib ein Passwort ein")
-    private String PasswortHash;
+    private String Passwort;
     private String UserRole;
     private Integer Position; // 1 = Mitarbeiter | 2 = Mentor
     private Boolean Activated;
 
     protected Mitarbeiter(){}
 
-    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwortHash, String userRole, Integer position, Boolean activated) {
+    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwort, String userRole, Integer position, Boolean activated) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -45,7 +45,7 @@ public class Mitarbeiter{
         this.PLZ = PLZ;
         Ort = ort;
         Straße = straße;
-        PasswortHash = passwortHash;
+        Passwort = passwort;
         UserRole = userRole;
         Position = position;
         Activated = activated;
@@ -123,12 +123,12 @@ public class Mitarbeiter{
         Straße = straße;
     }
 
-    public String getPasswortHash() {
-        return PasswortHash;
+    public String getPasswort() {
+        return Passwort;
     }
 
-    public void setPasswortHash(String passwortHash) {
-        PasswortHash = passwortHash;
+    public void setPasswort(String passwort) {
+        Passwort = passwort;
     }
 
     public String getUserRole() {
@@ -167,7 +167,7 @@ public class Mitarbeiter{
                 ", PLZ=" + PLZ +
                 ", Ort='" + Ort + '\'' +
                 ", Straße='" + Straße + '\'' +
-                ", PasswortHash='" + PasswortHash + '\'' +
+                ", Passwort='" + Passwort + '\'' +
                 ", UserRole='" + UserRole + '\'' +
                 ", Position=" + Position +
                 ", Activated=" + Activated +
