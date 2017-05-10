@@ -5,10 +5,11 @@ package com.fhdw.objects;
  */
 
 import javassist.bytecode.ByteArray;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.jws.soap.SOAPBinding;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity // Hibernate erstellt eine Tabelle aus dieser Klasse
@@ -19,18 +20,22 @@ public class Mitarbeiter{
     private String Vorname;
     private String Nachname;
     private String Geschlecht;
+    @Column(nullable = false, unique = true)
     private String Email;
     private Date Geburtsdatum;
     private Integer PLZ;
     private String Ort;
     private String Straße;
+    @Length(min = 5, message = "*Dein Passwort muss 5 Zeichen lang sein")
+    @NotEmpty(message = "*Bitte gib ein Passwort ein")
     private String PasswortHash;
+    private String UserRole;
     private Integer Position; // 1 = Mitarbeiter | 2 = Mentor
     private Boolean Activated;
 
     protected Mitarbeiter(){}
 
-    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwortHash, Integer position, Boolean activated) {
+    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwortHash, String userRole, Integer position, Boolean activated) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -40,6 +45,7 @@ public class Mitarbeiter{
         Ort = ort;
         Straße = straße;
         PasswortHash = passwortHash;
+        UserRole = userRole;
         Position = position;
         Activated = activated;
     }
@@ -124,6 +130,14 @@ public class Mitarbeiter{
         PasswortHash = passwortHash;
     }
 
+    public String getUserRole() {
+        return UserRole;
+    }
+
+    public void setUserRole(String userRole) {
+        UserRole = userRole;
+    }
+
     public Integer getPosition() {
         return Position;
     }
@@ -153,6 +167,7 @@ public class Mitarbeiter{
                 ", Ort='" + Ort + '\'' +
                 ", Straße='" + Straße + '\'' +
                 ", PasswortHash='" + PasswortHash + '\'' +
+                ", UserRole='" + UserRole + '\'' +
                 ", Position=" + Position +
                 ", Activated=" + Activated +
                 '}';
