@@ -16,13 +16,11 @@ import java.util.Date;
 @Entity // Hibernate erstellt eine Tabelle aus dieser Klasse
 public class Mitarbeiter{
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long MitarbeiterID;
+    @Column(nullable = false, unique = true)
+    private String Email;
     private String Vorname;
     private String Nachname;
     private String Geschlecht;
-    @Column(nullable = false, unique = true)
-    private String Email;
     private Date Geburtsdatum;
     private Integer PLZ;
     private String Ort;
@@ -49,14 +47,6 @@ public class Mitarbeiter{
         UserRole = userRole;
         Position = position;
         Activated = activated;
-    }
-
-    public Long getMitarbeiterID() {
-        return MitarbeiterID;
-    }
-
-    public void setMitarbeiterID(Long mitarbeiterID) {
-        MitarbeiterID = mitarbeiterID;
     }
 
     public String getVorname() {
@@ -158,7 +148,6 @@ public class Mitarbeiter{
     @Override
     public String toString() {
         return "Mitarbeiter{" +
-                "MitarbeiterID=" + MitarbeiterID +
                 ", Vorname='" + Vorname + '\'' +
                 ", Nachname='" + Nachname + '\'' +
                 ", Geschlecht='" + Geschlecht + '\'' +
