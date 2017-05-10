@@ -4,12 +4,19 @@ package com.fhdw.objects;
  * Created by timon on 02.05.2017.
  */
 
+<<<<<<< HEAD
 import javassist.bytecode.ByteArray;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
+=======
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+>>>>>>> dbb2f8e12a6026ae6df8ef2b28ef56fd2a330e76
 import java.util.Date;
 
 @Entity // Hibernate erstellt eine Tabelle aus dieser Klasse
