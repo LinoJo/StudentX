@@ -175,6 +175,13 @@
                         </div>
                     </div>
                     <div class="ibox-content">
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                                Studenten hinzufügen <i class="fa fa-user-plus"></i>
+                            </button>
+                        </div>
+
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
                             <tr>
@@ -182,15 +189,24 @@
                                 <th>Vorname</th>
                                 <th>Nachname</th>
                                 <th>Studiengruppe</th>
+                                <th>Edit</th>
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>548694654</td>
-                                    <td>Linus</td>
-                                    <td>Jolmes</td>
-                                    <td>PFBA415B</td>
-                                </tr>
+                            <tr id="548694655">
+                                <td class="Matikelnummer" 	style="width:*;" value="548694655">548694655</td>
+                                <td class="Vorname" 		style="width:*;" value="Linus">Linus</td>
+                                <td class="Nachname" 		style="width:*;" value="Jolmes">Jolmes</td>
+                                <td class="Studiengruppe" 	style="width:*;" value="pfba415b">PFBA415B</td>
+                                <td style="width:10px"><button type="button" id="548694655" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="padding:6px 8px;margin 0 auto;" onclick="modalLoadData()"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr id="548694655">
+                                <td class="Matikelnummer" 	style="width:*;" value="548694654">548694654</td>
+                                <td class="Vorname" 		style="width:*;" value="Timon">Timon</td>
+                                <td class="Nachname" 		style="width:*;" value="Caspari">Caspari</td>
+                                <td class="Studiengruppe" 	style="width:*;" value="pfba415b">PFBA415B</td>
+                                <td style="width:10px"><button type="button" id="548694654" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="padding:6px 8px;margin 0 auto;" onclick="modalLoadData()"><i class="fa fa-edit"></i></button></td>
+                            </tr>
                             </tbody>
                             <tfoot>
                             <tr>
@@ -198,10 +214,97 @@
                                 <th>Vorname</th>
                                 <th>Nachname</th>
                                 <th>Studiengruppe</th>
+                                <th>Edit</th>
                             </tr>
                             </tfoot>
                         </table>
                     </div>
+                    <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated bounceInRight">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+                                    <i class="fa fa-user modal-icon" style="float:left;"></i>
+                                    <h4 class="modal-title">Studenteninformationen</h4>
+                                    <small class="font-bold modal-smalltitle">1 eins</small>
+                                </div>
+                                <div style="clear:both;"></div>
+                                <div class="modal-body" style="width:45%; float:left;">
+                                    <div class="form-group">
+                                        <label>Vorname</label><input type="text" placeholder="Vorname" class="form-control modal-vorname"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nachname</label><input type="text" placeholder="Nachname" class="form-control modal-nachname"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Studiengruppe:</label><input type="text" placeholder="Studiengruppe" class="form-control modal-studiengruppe"/>
+                                    </div>
+                                </div>
+                                <div class="modal-body" style="width:45%; float:right;">
+                                    <p><strong>2zwei</strong> 3drei</p>
+                                    <div class="fach_select" style="margin:3px 3px 3px 0;">
+                                        <select class="sel_Fach" name="sel_Fach[]" style="padding:2px 4px;">
+                                            <option value="0">Fach wählen...</option>
+                                            <option value="SRM">SRM</option>
+                                            <option value="SAM">SAM</option>
+                                            <option value="ITS">ITS</option>
+                                            <option value="WRE">WRE</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group"><label>Sample Input</label> <input type="email" placeholder="Enter your email" class="form-control"/></div>
+                                </div>
+                                <div style="clear:both;"></div>
+                                <div class="modal-footer" style="display:block;">
+                                    <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
+                                    <button type="button" class="btn btn-primary">Änderunng Speichern</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!--Modalende Studenteninfo-->
+
+                    <div class="modal inmodal" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated bounceInRight">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+                                    <i class="fa fa-user modal-icon" style="float:left;"></i>
+                                    <h4 class="modal-title">Student hinzufügen</h4>
+                                    <small class="font-bold modal-smalltitle">1 eins</small>
+                                </div>
+                                <div style="clear:both;"></div>
+                                <div class="modal-body" style="width:50%; float:left;padding-right:15px;">
+                                    <div class="form-group">
+                                        <label>Vorname</label><input type="text" placeholder="Vorname" class="form-control modal-vorname"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nachname</label><input type="text" placeholder="Nachname" class="form-control modal-nachname"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Studiengruppe</label><input type="text" placeholder="Studiengruppe" class="form-control modal-studiengruppe"/>
+                                    </div>
+                                </div>
+                                <div class="modal-body" style="width:50%; float:right;padding-left:15px;">
+                                    <div class="form-group">
+                                        <label>Martikelnummer</label><input type="text" placeholder="Martikelnummer" readonly="true" style="cursor:default" class="form-control modal-vorname"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Adresse</label><input type="text" placeholder="Adresse" class="form-control modal-vorname"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display:block;">PLZ | Ort</label>
+                                        <input type="text" placeholder="PLZ" class="form-control modal-nachname" style="width:30%;min-width:40px;float:left;"/>
+                                        <input type="text" placeholder="Ort" class="form-control modal-nachname" style="width:67.5%;min-width:60px;float:right;"/>
+                                    </div>
+                                </div>
+                                <div style="clear:both;"></div>
+                                <div class="modal-footer" style="display:block;">
+                                    <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
+                                    <button type="button" class="btn btn-primary">Hinzufügen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!--Modalende Student hinzufügen-->
+
                 </div>
             </div>
         </div>
@@ -226,6 +329,7 @@
 <!-- Custom and plugin javascript -->
 <script th:src="@{/js/inspinia.js}"></script>
 <script th:src="@{/js/plugins/pace/pace.min.js}"></script>
+<script th:src="@{/static/js/plugins/jquery-ui/jquery-ui.min.js}"></script>
 
 <!-- Page-Level Scripts
 
