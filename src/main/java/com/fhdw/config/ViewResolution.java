@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
@@ -32,6 +33,7 @@ public class ViewResolution extends WebMvcConfigurerAdapter{
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.addTemplateResolver(urlTemplateResolver());
         engine.setTemplateResolver(templateResolver());
+        engine.addDialect(new SpringSecurityDialect());
         return engine;
     }
 
@@ -43,6 +45,7 @@ public class ViewResolution extends WebMvcConfigurerAdapter{
         resolver.setCacheable(false);
         return resolver;
     }
+
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
