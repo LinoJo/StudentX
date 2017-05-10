@@ -12,7 +12,7 @@ public class StudentService implements IStudentService{
 
     @Override
     public Student getStudentByMatrikelID(Long matrikelID) {
-        return studentRepo.findOne(matrikelID);
+        return studentRepo.findOne();
     }
 
 }

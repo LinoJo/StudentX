@@ -190,6 +190,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <tr th:each="prod: ${allProducts}">
+      							<td th:text="${prod.name}">Oranges</td>
+      							<td th:text="${#numbers.formatDecimal(prod.price, 1, 2)}">0.99</td>
+    						</tr>
                             <tr id="548694655">
                                 <td class="Matikelnummer" 	style="width:*;" value="548694655">548694655</td>
                                 <td class="Vorname" 		style="width:*;" value="Linus">Linus</td>
