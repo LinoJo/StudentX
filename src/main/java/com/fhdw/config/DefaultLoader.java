@@ -33,5 +33,16 @@ public class DefaultLoader implements ApplicationListener<ContextRefreshedEvent>
 
             mitarbeiterRepo.save(m);
         }
+
+        if(!mitarbeiterRepo.exists("user")){
+            Mitarbeiter m = new Mitarbeiter();
+            m.setEmail("user");
+            m.setVorname("Max");
+            m.setNachname("Mustermann");
+            m.setPasswort(passwordEncoder.encode("password"));
+            m.setRole(Role.ROLE_USER);
+
+            mitarbeiterRepo.save(m);
+        }
     }
 }
