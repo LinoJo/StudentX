@@ -50,7 +50,7 @@
                 <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
             </li>
             <li>
-                <a href="/kurs"><i class="fa fa-users"></i> <span class="nav-label">Kursübersicht</span></a>
+                <a href="/studiengruppe"><i class="fa fa-users"></i> <span class="nav-label">Kursübersicht</span></a>
             </li>
             <li class="active" sec:authorize="hasRole('ROLE_ADMIN')">
                 <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
@@ -159,7 +159,26 @@
     </div>
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-            <!--Contact Start-->
+            <!--Contact Start
+            <tr th:each="student : ${studenten}">
+                                    <td th:text="${student.MatrikelID}">1</td>
+                                    <td th:text="${student.Vorname}">A</td>
+                                    <td th:text="${student.Nachname}">A</td>
+                                    <td th:text="${student.StudienGruppenID}">1</td>
+                                    <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
+                                        <button type="button" th:id="${student.MatrikelID}" class="btn btn-primary delete text-cent" data-toggle="modal" data-target="#myModal" style="" onclick="modalLoadData()">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                    <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
+                                        <button type="button" th:id="${student.MatrikelID}" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="" onclick="modalLoadData()">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+            -->
+
+
             <div class="col-lg-4">
                 <div class="contact-box">
                     <a href="profile.html">
@@ -184,112 +203,6 @@
                 </div>
             </div>
             <!--Contact Ende-->
-
-            <!--Contact Start-->
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <a href="profile.html">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Contact Ende-->
-
-            <!--Contact Start-->
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <a href="profile.html">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Contact Ende-->
-
-            <!--Contact Start-->
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <a href="profile.html">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Contact Ende-->
-
-            <!--Contact Start-->
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <a href="profile.html">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Contact Ende-->
-
-
         </div>
     </div>
 </div>

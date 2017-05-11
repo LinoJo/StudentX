@@ -21,4 +21,9 @@ public class StudentService implements IStudentService{
     public List<Student> getAll() {
         return (List<Student>) studentRepo.findAll();
     }
+
+    @Override
+    public Student create(Student student) {
+        return studentRepo.save(student);
+    }
 }

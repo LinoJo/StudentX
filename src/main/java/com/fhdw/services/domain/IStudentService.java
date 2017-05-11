@@ -8,4 +8,5 @@ public interface IStudentService {
 	Student getStudentByMatrikelID(Long matrikelID);
 
 	List<Student> getAll();
+	Student create(Student student);
 }
