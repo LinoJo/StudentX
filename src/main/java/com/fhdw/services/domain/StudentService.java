@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import com.fhdw.interfaces.StudentRepo;
 import com.fhdw.objects.Student;
 
+import java.util.List;
+
 @Service
 public class StudentService implements IStudentService{
 	@Autowired
@@ -15,4 +17,8 @@ public class StudentService implements IStudentService{
         return studentRepo.findOne(matrikelID);
     }
 
+    @Override
+    public List<Student> getAll() {
+        return (List<Student>) studentRepo.findAll();
+    }
 }
