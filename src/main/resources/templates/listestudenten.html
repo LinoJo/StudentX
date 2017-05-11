@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>StudentX | Studentenübersicht</title>
+    <title>Student<i class="fa fa-xing"></i> | Studentenübersicht</title>
 
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
     <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
@@ -40,11 +40,17 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    StX
+                    St<i class="fa fa-xing"></i>
                 </div>
             </li>
+            <li>
+                <a href="/index">St<i class="fa fa-xing"></i> <span class="nav-label">Startseite</span></a>
+            </li>
             <li class="active">
-                <a href="/studenten"><i class="fa fa-users"></i> <span class="nav-label">Studentenübersicht</span></a>
+                <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
+            </li>
+            <li>
+                <a href="/kurs"><i class="fa fa-users"></i> <span class="nav-label">Kursübersicht</span></a>
             </li>
             <li sec:authorize="hasRole('ROLE_ADMIN')">
                 <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
@@ -140,7 +146,7 @@
             <h2>Studentenübersicht</h2>
             <ol class="breadcrumb">
                 <li>
-                    <a href="\index">StudentX</a>
+                    <a href="\index">Student<i class="fa fa-xing"></i></a>
                 </li>
                 <li class="active">
                     <strong>Studentenübersicht</strong>

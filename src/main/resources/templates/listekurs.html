@@ -49,10 +49,10 @@
             <li>
                 <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
             </li>
-            <li>
+            <li class="active">
                 <a href="/kurs"><i class="fa fa-users"></i> <span class="nav-label">Kursübersicht</span></a>
             </li>
-            <li class="active" sec:authorize="hasRole('ROLE_ADMIN')">
+            <li sec:authorize="hasRole('ROLE_ADMIN')">
                 <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
             </li>
         </ul>
@@ -143,13 +143,13 @@
     </div>
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Mitarbeiterübersicht</h2>
+            <h2>Kursübersicht</h2>
             <ol class="breadcrumb">
                 <li>
                     <a href="\index">Student<i class="fa fa-xing"></i></a>
                 </li>
                 <li class="active">
-                    <strong>Mitarbeiterübersicht</strong>
+                    <strong>Kursübersicht</strong>
                 </li>
             </ol>
         </div>
