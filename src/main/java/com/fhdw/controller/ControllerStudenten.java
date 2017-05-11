@@ -18,6 +18,7 @@ public class ControllerStudenten {
     @RequestMapping("/studenten")
     public ModelAndView studenten(){
         ModelAndView mav = new ModelAndView("listestudenten");
+        mav.addObject("students", studentService.getAll());
         return mav;
     }
 }
