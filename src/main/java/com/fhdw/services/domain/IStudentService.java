@@ -9,4 +9,5 @@ public interface IStudentService {
 
 	List<Student> getAll();
 
+	Student create(Student student);
 }
