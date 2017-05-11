@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>StudentX | Studentenübersicht</title>
+    <title>Student<i class="fa fa-xing"></i> | Studentenübersicht</title>
 
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
     <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
@@ -40,13 +40,19 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    StX
+                    St<i class="fa fa-xing"></i>
                 </div>
             </li>
-            <li>
-                <a href="/studenten"><i class="fa fa-users"></i> <span class="nav-label">Studentenübersicht</span></a>
+            <li class="active" >
+                <a href="/index">St<i class="fa fa-xing"></i> <span class="nav-label">Startseite</span></a>
             </li>
-            <li class="active" sec:authorize="hasRole('ROLE_ADMIN')">
+            <li>
+                <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
+            </li>
+            <li>
+                <a href="/kurs"><i class="fa fa-users"></i> <span class="nav-label">Kursübersicht</span></a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_ADMIN')">
                 <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
             </li>
         </ul>
@@ -137,11 +143,11 @@
     </div>
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Herzlich Willkommen bei StudentX</h2>
+            <h2>Herzlich Willkommen bei <strong>Student</strong><i class="fa fa-xing"></i></h2>
             <h3>Die Übersicht über Studenten und Mitarbeiter der <strong>FHDW</strong></h3>
             <ol class="breadcrumb">
                 <li class="active">
-                    <a href="\index">StudentX</a>
+                    <a href="\index">Student<i class="fa fa-xing"></i></a>
                 </li>
             </ol>
         </div>
@@ -153,11 +159,11 @@
         <div class="row">
             <!--Contact Start-->
             <div class="col-lg-4">
-                <div class="contact-box hover_shadow" style="background-color: #1ab394;border: 0;">
+                <div class="contact-box hover_shadow" style="background-color: #1ab394;border: 0;color:whitesmoke;">
                     <a href="/studenten">
                         <div class="col-sm-4">
                             <div class="text-center" style="font-size: -webkit-xxx-large;font-size:xxx-large; float:  left;">
-                                <i class="fa fa-users" ></i>
+                                St<i class="fa fa-xing"></i>
                                 <!--<div class="m-t-xs font-bold">Graphics designer</div>-->
                             </div>
                         </div>
@@ -177,7 +183,30 @@
 
             <!--Contact Start-->
             <div class="col-lg-4">
-                <div class="contact-box hover_shadow" style="background-color: #1ab394;border: 0;">
+                <div class="contact-box hover_shadow" style="background-color: #1ab394;border: 0;color:whitesmoke;">
+                    <a href="/kurs">
+                        <div class="col-sm-4">
+                            <div class="text-center" style="font-size: -webkit-xxx-large;font-size:xxx-large; float:  left;">
+                                <i class="fa fa-users" ></i>
+                                <!--<div class="m-t-xs font-bold">Graphics designer</div>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <h3><strong>Kursübersicht</strong></h3>
+                            <p>
+                                Hier gelangen Sie zu der Übersicht der Kurse.<br/>
+                                Die detalierte Ansicht der Studiengruppen finden Sie hier.
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </a>
+                </div>
+            </div>
+            <!--Contact Ende-->
+
+            <!--Contact Start-->
+            <div class="col-lg-4" sec:authorize="hasRole('ROLE_ADMIN')">
+                <div class="contact-box hover_shadow" style="background-color: #1ab394;border: 0;color:whitesmoke;">
                     <a href="/mitarbeiter">
                         <div class="col-sm-4">
                             <div class="text-center" style="font-size: -webkit-xxx-large;font-size:xxx-large; float:  left;">
