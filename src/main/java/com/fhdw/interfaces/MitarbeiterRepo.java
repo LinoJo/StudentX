@@ -6,8 +6,6 @@ package com.fhdw.interfaces;
 
 import com.fhdw.objects.Mitarbeiter;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 public interface MitarbeiterRepo extends CrudRepository<Mitarbeiter, String> {
 }
