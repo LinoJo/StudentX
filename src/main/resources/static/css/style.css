@@ -325,7 +325,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   margin-left: 0px;
 }
 body.mini-navbar .navbar-static-side {
-  width: 70px;
+  width: 85px;
 }
 body.mini-navbar .profile-element,
 body.mini-navbar .nav-label,
@@ -346,13 +346,13 @@ body.mini-navbar .nav-header {
   background-color: #1ab394;
 }
 body.mini-navbar #page-wrapper {
-  margin: 0 0 0 70px;
+  margin: 0 0 0 85px;
 }
 body.fixed-sidebar.mini-navbar .footer {
   margin: 0 0 0 0px;
 }
 body.mini-navbar #page-wrapper {
-  margin: 0 0 0 70px;
+  margin: 0 0 0 85px;
 }
 body.fixed-sidebar .navbar-static-side {
   position: fixed;
@@ -3676,7 +3676,7 @@ body.modal-open {
   margin: 8% auto 0;
 }
 .logo-name {
-  color: #e6e6e6;
+  color: #c6c6c6;
   font-size: 180px;
   font-weight: 800;
   letter-spacing: -10px;
@@ -5027,5 +5027,25 @@ body.skin-3 {
 @media (max-width: 1000px) {
   .welcome-message {
     display: none;
+  }
+}
+
+.col-lg-4_extra_media {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-lg-4_extra_media > .contact-box {
+  min-height: 1px; !important;
+}
+
+@media (min-width: 1450px) {
+  .col-lg-4_extra_media{
+    float:left;
+    width: 33.333333333%; !important;
+  }
+  .col-lg-4_extra_media > .contact-box {
+    min-height: 190px; !important;
   }
 }
