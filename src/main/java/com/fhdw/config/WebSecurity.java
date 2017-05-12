@@ -38,7 +38,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
                     .and()
                 //Logout
                 .logout()
-                    .permitAll();
+                    .deleteCookies()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/login?logout");
     }
 
     //Benutzerauthentifizierung
