@@ -24,39 +24,7 @@
 
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
-        <ul class="nav" id="side-menu">
-            <li class="nav-header">
-                <div class="dropdown profile-element">
-                    <span>
-                        <img alt="image" class="img-circle" th:src="@{/img/profile_small.jpg}" />
-                    </span>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Timon Caspari</strong>
-                             </span> <span class="text-muted text-xs block">Administrator <b class="caret"></b></span> </span> </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="profile.html">Profil</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/">Abmelden</a></li>
-                    </ul>
-                </div>
-                <div class="logo-element">
-                    St<i class="fa fa-xing"></i>
-                </div>
-            </li>
-            <li>
-                <a href="/index">St<i class="fa fa-xing"></i> <span class="nav-label">Startseite</span></a>
-            </li>
-            <li>
-                <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
-            </li>
-            <li>
-                <a href="/studiengruppe"><i class="fa fa-users"></i> <span class="nav-label">Kursübersicht</span></a>
-            </li>
-            <li class="active" sec:authorize="hasRole('ROLE_ADMIN')">
-                <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
-            </li>
-        </ul>
-
+        <div th:replace="fragments/sidemenu :: sidemenu (site='4')"></div>
     </div>
 </nav>
 
