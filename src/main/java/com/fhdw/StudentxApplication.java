@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class StudentxApplication {
 
-	public static void main(String[] args) {
+	public static void StudentxApplicationStart(String[] args) {
 		SpringApplication.run(StudentxApplication.class, args);
 	}
 }
