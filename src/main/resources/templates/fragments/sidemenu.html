@@ -1,0 +1,30 @@
+<ul th:fragment="sidemenu" class="nav" id="side-menu">
+    <div th:replace="fragments/navheader :: navheader"></div>
+    <li th:if="${site} == 1" class="active" >
+        <a href="/index">St<i class="fa fa-xing"></i> <span class="nav-label">Startseite</span></a>
+    </li>
+    <li th:unless="${site} == 1">
+        <a href="/index">St<i class="fa fa-xing"></i> <span class="nav-label">Startseite</span></a>
+    </li>
+
+    <li th:if="${site} == 2" class="active">
+        <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
+    </li>
+    <li th:unless="${site} == 2">
+        <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
+    </li>
+
+    <li th:if="${site} == 3" class="active">
+        <a href="/studiengruppe"><i class="fa fa-users"></i> <span class="nav-label">Studiengruppen</span></a>
+    </li>
+    <li th:unless="${site} == 3">
+        <a href="/studiengruppe"><i class="fa fa-users"></i> <span class="nav-label">Studiengruppen</span></a>
+    </li>
+
+    <li th:if="${site} == 4" class="active">
+        <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
+    </li>
+    <li th:unless="${site} == 4">
+        <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
+    </li>
+</ul>

@@ -24,22 +24,7 @@
 
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
-        <ul class="nav" id="side-menu">
-            <div th:replace="fragments/navheader :: navheader"></div>
-            <li class="active" >
-                <a href="/index">St<i class="fa fa-xing"></i> <span class="nav-label">Startseite</span></a>
-            </li>
-            <li>
-                <a href="/studenten"><i class="fa fa-user"></i> <span class="nav-label">Studentenübersicht</span></a>
-            </li>
-            <li>
-                <a href="/studiengruppe"><i class="fa fa-users"></i> <span class="nav-label">Kursübersicht</span></a>
-            </li>
-            <li sec:authorize="hasRole('ROLE_ADMIN')">
-                <a href="/mitarbeiter"><i class="fa fa-university"></i> <span class="nav-label">Mitarbeiterübersicht</span></a>
-            </li>
-        </ul>
-
+        <div th:replace="fragments/sidemenu :: sidemenu (site='1')"></div>
     </div>
 </nav>
 
