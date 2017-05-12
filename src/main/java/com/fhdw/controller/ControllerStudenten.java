@@ -8,6 +8,7 @@ import com.fhdw.services.domain.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -21,4 +22,6 @@ public class ControllerStudenten {
         mav.addObject("studenten", studentService.getAll());
         return mav;
     }
+
+    //@RequestMapping(value = "/student-add", method = RequestMethod.POST)
 }
