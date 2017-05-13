@@ -17,7 +17,7 @@ public class TextAreaOutputStream extends OutputStream {
 	      this.title = title;
 	      sb.append(title + "> ");
 	   }
-
+/*
 	   @Override
 	   public void flush() {
 	   }
@@ -25,7 +25,7 @@ public class TextAreaOutputStream extends OutputStream {
 	   @Override
 	   public void close() {
 	   }
-
+*/
 	   @Override
 	   public void write(int b) throws IOException {
 
