@@ -3,6 +3,8 @@ package com.fhdw.gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.*;
 import com.fhdw.StudentxApplication;
@@ -19,9 +21,20 @@ public class ServerGui extends JFrame implements ActionListener {
 	
 	public ServerGui(){
 		this.setTitle("StudentX Server v1.0");
-		this.setSize(800,600);
+		this.setSize(1000,600);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(ServerGui.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(ServerGui.DO_NOTHING_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+		    @Override
+		    public void windowClosing(WindowEvent we)
+		    {
+		    	int reply = warningMessage();
+		        if(reply==0)
+		        {
+		            System.exit(0);
+		        }
+		    }
+		});
 	
 		serverGuiStatusPanel = new JPanel();
 		serverGuiStatusPanel.add(new ServerOutputStream());
@@ -54,7 +67,7 @@ public class ServerGui extends JFrame implements ActionListener {
 		splitPaneH.setLeftComponent(serverGuiButtonPanel);
 		splitPaneH.setRightComponent(serverGuiStatusPanel);
 		splitPaneH.setDividerSize(0);
-		splitPaneH.setDividerLocation(300);
+		splitPaneH.setDividerLocation(250);
 		
 		this.add(splitPaneH);
 	}
@@ -65,6 +78,7 @@ public class ServerGui extends JFrame implements ActionListener {
 			Thread t = new Thread(){
 				public void run(){
 					StudentxApplication.start();
+					System.out.println("\n################\nStudentX is ready to go\n##############\n");
 				}
 			};
 			t.start();
@@ -81,6 +95,7 @@ public class ServerGui extends JFrame implements ActionListener {
         		Thread t = new Thread(){
     				public void run(){
     					StudentxApplication.stop();
+    					System.out.println("\n############\nStudentX stopped\n############\n");
     				}
     			};
     			t.start();
@@ -88,6 +103,10 @@ public class ServerGui extends JFrame implements ActionListener {
         	stopButton.setSelected(false);
         }
 	}
+	
+	
+	
+	
 	int warningMessage(){
 		int reply = JOptionPane.showConfirmDialog(null,"Soll die Anwendung wirklich geschlossen werden?","Warnung", JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE);
 		return reply;		
