@@ -151,9 +151,8 @@
                     </div>
                     <div class="ibox-content">
 
-                        <!--th:if="${!studenten.isEmpty()}"-->
-                        <div>
-                            <a href="/studentenexport"><span class="nav-label">CSV Export </span><i class="fa fa-download"></i> </a>
+                        <div th:if="${!studenten.isEmpty()}">
+                            <a href="/studentenexport" class="btn btn-primary" style="float: right;"><span class="nav-label">CSV Export </span><i class="fa fa-download"></i> </a>
                         </div>
 
                         <div th:if="${!studenten.isEmpty()}">
@@ -206,10 +205,10 @@
                                 </tfoot>
                             </table>
                         </div>
-                        <div th:if="${studenten.isEmpty()}">
+                      <!--  <div th:if="${studenten.isEmpty()}">
                             Es sind keine Studenten vorhanden!
                         </div>
-
+-->
 
                     </div>
                     <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -265,13 +264,8 @@
                                     <small class="font-bold modal-smalltitle"></small>
                                 </div>
                                 <div style="clear:both;"></div>
-<<<<<<< HEAD
-                                <form action="senden.html" id="person">
-                                    <div class="modal-body" style="width:50%; float:left;padding-right:15px;">
-=======
                                 <form method="POST" action="/studenten/" th:object="${newStudent}">
                                     <div class="modal-body form_hinzufügen_links">
->>>>>>> 7b1bd56ebb90300b8ab683bede84b9cf3c191270
                                         <div class="form-group">
                                             <label>Anrede</label><select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede"><option value="m">Herr</option><option value="w">Frau</option></select>
                                         </div>
