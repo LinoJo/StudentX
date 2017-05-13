@@ -5030,25 +5030,61 @@ body.skin-3 {
   }
 }
 
-.col-lg-4_extra_media {
+
+/*****************************************/
+
+.col-lg-4_mitarbeiter {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
-.col-lg-4_extra_media > .contact-box {
+.col-lg-4_mitarbeiter > .contact-box {
   min-height: 1px; !important;
 }
 
-@media (min-width: 1450px) {
-  .col-lg-4_extra_media{
-    float:left;
-    width: 33.333333333%; !important;
-  }
-  .col-lg-4_extra_media > .contact-box {
+@media (min-width: 1200px) {
+  .col-lg-4 > .contact-box {
     min-height: 190px; !important;
   }
 }
+
+.contact_button_edit {
+  position: absolute;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0);
+  color: #1ab394;
+  top: 1px;
+  border:none;
+}
+.contact_button_trash {
+  position: absolute;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0);
+  color: #1ab394;
+  border:none;
+}
+
+@media (min-width: 1310px) {
+  .col-lg-4_mitarbeiter {
+    width: 33.33333333%;
+    float: left;
+  }
+  .contact_button_trash {
+    bottom: 21px;!important;
+  }
+}
+
+@media (max-width: 1310px) {
+  .contact_button_trash {
+    bottom: 1px;!important;
+  }
+}
+
 
 @media (min-width: 400px) {
   .hinzufügen_mobiel::before {
@@ -5059,11 +5095,6 @@ body.skin-3 {
 @media (max-width: 400px){
   .hinzufügen_mobiel::before {
   content : ""; !important;
-  }
-}
-@media (max-width: 400px){
-  .collapse-link_tabelle {
-    display:none; !important;
   }
 }
 
@@ -5077,6 +5108,7 @@ body.skin-3 {
     padding-top: 0; !important;
   }
 }
+
 
 @media (min-width: 400px){
   .form_hinzufügen_rechts{
