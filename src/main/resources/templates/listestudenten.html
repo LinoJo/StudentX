@@ -265,22 +265,27 @@
                                     <small class="font-bold modal-smalltitle"></small>
                                 </div>
                                 <div style="clear:both;"></div>
+<<<<<<< HEAD
                                 <form action="senden.html" id="person">
                                     <div class="modal-body" style="width:50%; float:left;padding-right:15px;">
+=======
+                                <form method="POST" action="/studenten/" th:object="${newStudent}">
+                                    <div class="modal-body form_hinzufügen_links">
+>>>>>>> 7b1bd56ebb90300b8ab683bede84b9cf3c191270
                                         <div class="form-group">
-                                            <label>Anrede</label><select type="text" placeholder="Anrede" class="form-control modal-anrede"><option value="m">Herr</option><option value="w">Frau</option></select>
+                                            <label>Anrede</label><select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede"><option value="m">Herr</option><option value="w">Frau</option></select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Name</label><input type="text" placeholder="Nachname" class="form-control modal-nachname"/>
+                                            <label>Name</label><input type="text" th:field="*{Nachname}" placeholder="Nachname" class="form-control modal-nachname"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" placeholder="Vorname" class="form-control modal-vorname"/>
+                                            <input type="text" placeholder="Vorname" th:field="*{Vorname}" class="form-control modal-vorname"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>E-Mail</label><input type="email" placeholder="EMail" class="form-control modal-email"/>
+                                            <label>E-Mail</label><input type="email" th:field="*{Email}" placeholder="EMail" class="form-control modal-email"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>Geburtstag</label><input type="date" placeholder="TT.MM.JJJJ" class="form-control modal-email"/>
+                                            <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-email"/>
                                         </div>
                                     </div>
                                     <div class="modal-body form_hinzufügen_rechts">
@@ -288,20 +293,20 @@
                                             <label>Martikelnummer</label><input type="text" placeholder="Martikelnummer" readonly="true" style="cursor:default" class="form-control modal-vorname"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>Adresse</label><input type="text" placeholder="Straße" class="form-control modal-straße"/>
+                                            <label>Adresse</label><input type="text" th:field="*{Straße}" placeholder="Straße" class="form-control modal-straße"/>
                                         </div>
                                         <div class="form-group" style="width:30%;min-width:40px;float:left;">
-                                            <input type="text" placeholder="PLZ" class="form-control modal-plz" />
+                                            <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz" />
                                         </div>
                                         <div class="form-group" style="width:67.5%;min-width:60px;float:right;">
-                                            <input type="text" placeholder="Ort" class="form-control modal-ort" />
+                                            <input type="text" th:field="*{Ort}" placeholder="Ort" class="form-control modal-ort" />
                                         </div>
                                         <div style="clear: both;"></div>
                                         <div class="form-group">
                                             <label>Studiengruppe</label><input type="text" placeholder="Studiengruppe" class="form-control modal-studiengruppe"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>Praxisfirma</label><input type="text" placeholder="Praxisfirma" class="form-control modal-praxisfirma"/>
+                                            <label>Praxisfirma</label><input type="text" th:field="*{Praxisfirma}" placeholder="Praxisfirma" class="form-control modal-praxisfirma"/>
                                         </div>
                                     </div>
                                     <div style="clear:both;"></div>

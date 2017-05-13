@@ -5,12 +5,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.fhdw.gui.ServerGui;
+
 @SpringBootApplication
 @ComponentScan
 @Configuration
 public class StudentxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StudentxApplication.class, args);
+		//ServerGui instanz = new ServerGui();
+		//instanz.setVisible(true);
+		start();
 	}
+	
+	public static void start(){
+		SpringApplication.run(StudentxApplication.class);
+	}
+	
+	public static void stop() {
+	    System.exit(0);
+	}
+	
 }
