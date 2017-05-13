@@ -25,7 +25,7 @@ public class Student{
     private Integer StudienGruppenID;
     private String Praxisfirma;
 
-    protected Student(){}
+    public Student(){}
 
     public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, Boolean activated, Integer studienGruppenID, String praxisfirma) {
         Vorname = vorname;
