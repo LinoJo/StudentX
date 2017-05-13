@@ -18,11 +18,11 @@ public class StudentxApplication {
 		studentxApplicationStart();
 	}
 	
-	public static void studentxApplicationStart(){
+	public static void start(){
 		SpringApplication.run(StudentxApplication.class);
 	}
 	
-	public static void studentxApplicationStop() {
+	public static void stop() {
 	    System.exit(0);
 	}
 	
