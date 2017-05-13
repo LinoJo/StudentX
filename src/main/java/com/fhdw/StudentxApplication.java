@@ -18,8 +18,9 @@ public class StudentxApplication {
 	 private static ApplicationContext appContext;
 
 	public static void main(String[] args) {
-		ServerGui instanz = new ServerGui();
-		instanz.setVisible(true);
+		//ServerGui instanz = new ServerGui();
+		//instanz.setVisible(true);
+		start();
 	}
 	
 	public static void start(){
