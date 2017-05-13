@@ -62,7 +62,12 @@ public class ServerGui extends JFrame implements ActionListener {
 	public void actionPerformed (ActionEvent a){
 		
 		if(a.getSource() == this.startButton){
-			StudentxApplication.studentxApplicationStart();
+			Thread t = new Thread(){
+				public void run(){
+					StudentxApplication.start();
+				}
+			};
+			t.start();
 			if(stopButton.isSelected()){
 				stopButton.setSelected(false);
 			}
@@ -73,7 +78,12 @@ public class ServerGui extends JFrame implements ActionListener {
         		if(startButton.isSelected()){
             		startButton.setSelected(false);
             	}
-        		StudentxApplication.studentxApplicationStop();
+        		Thread t = new Thread(){
+    				public void run(){
+    					StudentxApplication.stop();
+    				}
+    			};
+    			t.start();
         	}
         	stopButton.setSelected(false);
         }
