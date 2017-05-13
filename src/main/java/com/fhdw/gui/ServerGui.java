@@ -36,8 +36,8 @@ public class ServerGui extends JFrame implements ActionListener {
 		stopButton.addActionListener(this);
 		
 		serverGuiButtonPanel = new JPanel(new GridLayout());
-		serverGuiButtonPanelTop = new JPanel();
-		serverGuiButtonPanelBottom = new JPanel ();
+		serverGuiButtonPanelTop = new JPanel(new GridBagLayout());
+		serverGuiButtonPanelBottom = new JPanel (new GridBagLayout());
 		
 		serverGuiButtonPanelTop.add(startButton);
 		serverGuiButtonPanelBottom.add(stopButton);
