@@ -5049,3 +5049,46 @@ body.skin-3 {
     min-height: 190px; !important;
   }
 }
+
+@media (min-width: 400px) {
+  .hinzufügen_mobiel::before {
+    content : "Hinzufügen"; !important;
+  }
+}
+
+@media (max-width: 400px){
+  .hinzufügen_mobiel::before {
+  content : ""; !important;
+  }
+}
+@media (max-width: 400px){
+  .collapse-link_tabelle {
+    display:none; !important;
+  }
+}
+
+@media (max-width: 400px){
+  .form_hinzufügen_rechts .form_hinzufügen_links {
+    width:100%; !important;
+    float: none; !important;
+    padding-left:7px; !important;
+    padding-right:7px; !important;
+    padding-bottom: 0;!important;
+    padding-top: 0; !important;
+  }
+}
+
+@media (min-width: 400px){
+  .form_hinzufügen_rechts{
+    width:50%; !important;
+    float:right; !important;
+    padding-left:15px; !important;
+  }
+}
+@media (min-width: 400px){
+  .form_hinzufügen_links{
+    width:50%; !important;
+    float:left; !important;
+    padding-left:15px; !important;
+  }
+}
