@@ -213,6 +213,7 @@
 -->
 
                     </div>
+
                     <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content animated bounceInRight">
@@ -269,7 +270,11 @@
                                 <form method="POST" th:action="@{/studenten/new}" th:object="${newStudent}">
                                     <div class="modal-body form_hinzufügen_links">
                                         <div class="form-group">
-                                            <label>Anrede</label><select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede"><option value="m">Herr</option><option value="w">Frau</option></select>
+                                            <label>Anrede</label>
+                                            <select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede">
+                                                <option value="m">Herr</option>
+                                                <option value="w">Frau</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Name</label><input type="text" th:field="*{Nachname}" placeholder="Nachname" class="form-control modal-nachname"/>
@@ -286,7 +291,14 @@
                                     </div>
                                     <div class="modal-body form_hinzufügen_rechts">
                                         <div class="form-group">
-                                            <label>Martikelnummer</label><input type="text" placeholder="Martikelnummer" readonly="true" style="cursor:default" class="form-control modal-vorname"/>
+                                            <label>Studiengruppe</label>
+                                            <select type="text"  th:field="*{StudienGruppenID}" placeholder="Studiengruppe" class="form-control modal-studiengruppe">
+                                                <option value="0">Studiengruppe</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Adresse</label><input type="text" th:field="*{Straße}" placeholder="Straße" class="form-control modal-straße"/>
