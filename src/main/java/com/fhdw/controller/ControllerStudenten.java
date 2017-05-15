@@ -27,6 +27,7 @@ public class ControllerStudenten {
     public ModelAndView studenten(){
         ModelAndView mav = new ModelAndView("listestudenten");
         mav.addObject("studenten", studentService.getAll());
+        mav.addObject("studiengruppen", studiengruppeService.getAll());
         mav.addObject("newStudent", new Student());
         return mav;
     }
