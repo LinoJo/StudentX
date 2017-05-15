@@ -22,6 +22,7 @@ public class ControllerStudiengruppe {
     public ModelAndView studiengruppe(){
         ModelAndView mav = new ModelAndView("listestudiengruppe");
         mav.addObject("studiengruppe", studiengruppeService.getAll());
+        mav.addObject("newStudiengruppe", new Studiengruppe());
         return mav;
     }
 
