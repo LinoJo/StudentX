@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -29,10 +30,16 @@ public class ControllerStudenten {
         return mav;
     }
 
-    @RequestMapping(value = "/studenten", method = RequestMethod.POST)
-    public void saveStudent(@Valid @ModelAttribute("newStudent") Student student, BindingResult result) {
+    @RequestMapping(value = "/studenten/new", method = RequestMethod.POST)
+    public String saveStudent(@Valid @ModelAttribute("newStudent") Student student, BindingResult result) {
         if(!result.hasErrors()){
             studentService.create(student);
         }
+        return "redirect:/studenten";
+    }
+
+    @RequestMapping(value="/studenten/del", method=RequestMethod.POST)
+    public String removeStudent(@RequestParam("MatrikelID") Long MatID) {
+        return "redirect:/studenten";
     }
 }

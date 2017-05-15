@@ -178,9 +178,10 @@
                                     <td th:text="${student.Nachname}">A</td>
                                     <td th:text="${student.StudienGruppenID}">1</td>
                                     <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
-                                        <button type="button" th:id="${student.MatrikelID}" class="btn btn-primary delete text-cent" data-toggle="modal" data-target="#myModal" style="" onclick="modalLoadData()">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
+                                        <form th:action="@{/studenten/del}" th:object="${student}" method="post">
+                                            <input type="hidden" th:value="${student.MatrikelID}" />
+                                            <button class="btn btn-primary delete" type="submit"><i class="fa fa-trash"></i></button>
+                                        </form>
                                     </td>
                                     <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
                                         <button type="button" th:id="${student.MatrikelID}" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="" onclick="modalLoadData()">
@@ -264,7 +265,7 @@
                                     <small class="font-bold modal-smalltitle"></small>
                                 </div>
                                 <div style="clear:both;"></div>
-                                <form method="POST" th:action="@{/studenten}" th:object="${newStudent}">
+                                <form method="POST" th:action="@{/studenten/new}" th:object="${newStudent}">
                                     <div class="modal-body form_hinzufügen_links">
                                         <div class="form-group">
                                             <label>Anrede</label><select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede"><option value="m">Herr</option><option value="w">Frau</option></select>
