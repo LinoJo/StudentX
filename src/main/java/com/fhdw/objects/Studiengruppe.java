@@ -4,6 +4,8 @@ package com.fhdw.objects;
  * Created by timon on 02.05.2017.
  */
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +21,9 @@ public class Studiengruppe {
     private String StudiengruppeName;
     private String StudiengangName;
     private String AbschlussTitel;
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date StartDatum;
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date EndeDatum;
 
     protected Studiengruppe(){};
