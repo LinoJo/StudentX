@@ -4,6 +4,8 @@ package com.fhdw.objects;
  * Created by timon on 02.05.2017.
  */
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -17,6 +19,7 @@ public class Student{
     private String Nachname;
     private String Geschlecht;
     private String Email;
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date Geburtsdatum;
     private Integer PLZ;
     private String Ort;
@@ -24,7 +27,6 @@ public class Student{
     private Boolean Activated;
     private Integer StudienGruppenID;
     private String Praxisfirma;
-
     public Student(){}
 
     public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, Boolean activated, Integer studienGruppenID, String praxisfirma) {

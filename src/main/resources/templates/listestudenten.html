@@ -264,7 +264,7 @@
                                     <small class="font-bold modal-smalltitle"></small>
                                 </div>
                                 <div style="clear:both;"></div>
-                                <form method="POST" action="/studenten/" th:object="${newStudent}">
+                                <form method="POST" th:action="@{/studenten}" th:object="${newStudent}">
                                     <div class="modal-body form_hinzufügen_links">
                                         <div class="form-group">
                                             <label>Anrede</label><select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede"><option value="m">Herr</option><option value="w">Frau</option></select>

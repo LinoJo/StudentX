@@ -30,14 +30,9 @@ public class ControllerStudenten {
     }
 
     @RequestMapping(value = "/studenten", method = RequestMethod.POST)
-    public String saveStudent(@Valid @ModelAttribute("newStudent") Student student, BindingResult result) {
-        if(result.hasErrors()){
-
-        }
-        else {
+    public void saveStudent(@Valid @ModelAttribute("newStudent") Student student, BindingResult result) {
+        if(!result.hasErrors()){
             studentService.create(student);
-            return "/studenten";
         }
-        return null;
     }
 }
