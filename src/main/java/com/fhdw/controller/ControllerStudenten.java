@@ -35,6 +35,14 @@ public class ControllerStudenten {
         return "redirect:/studenten";
     }
 
+    @RequestMapping(value = "/studenten/update", method = RequestMethod.POST)
+    public String updateStudent(@Valid @ModelAttribute("updateStudent") Student student, BindingResult result) {
+        if(!result.hasErrors()){
+            //studentService.update(student);
+        }
+        return "redirect:/studenten";
+    }
+
     @RequestMapping(value="/studenten/del/{MatrikelID}", method=RequestMethod.GET)
     public String removeStudent(@PathVariable("MatrikelID") Long MatID) {
         studentService.delStudentByMatrikelID(MatID);
