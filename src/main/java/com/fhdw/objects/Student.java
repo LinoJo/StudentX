@@ -25,11 +25,11 @@ public class Student{
     private String Ort;
     private String Straße;
     private Boolean Activated;
-    private Integer StudienGruppenID;
+    private Long StudienGruppenID;
     private String Praxisfirma;
     public Student(){}
 
-    public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, Boolean activated, Integer studienGruppenID, String praxisfirma) {
+    public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, Boolean activated, Long studienGruppenID, String praxisfirma) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -123,11 +123,11 @@ public class Student{
         Activated = activated;
     }
 
-    public Integer getStudienGruppenID() {
+    public Long getStudienGruppenID() {
         return StudienGruppenID;
     }
 
-    public void setStudienGruppenID(Integer studienGruppenID) {
+    public void setStudienGruppenID(Long studienGruppenID) {
         StudienGruppenID = studienGruppenID;
     }
 

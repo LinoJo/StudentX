@@ -27,4 +27,9 @@ public class StudiengruppeService implements IStudiengruppeService{
     public Long getCount() {
         return StudiengruppeRepo.count();
     }
+
+    @Override
+    public Studiengruppe create(Studiengruppe studiengruppe) {
+        return StudiengruppeRepo.save(studiengruppe);
+    }
 }

@@ -43,63 +43,6 @@
                 <li>
                     <span class="m-r-sm text-muted welcome-message">Willkommen in der Studentenverwaltung</span>
                 </li>
-                <!-- Benachrichtungen
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
-                    </a>
-
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a7.jpg"/>
-                                </a>
-                                <div class="media-body">
-                                    <small class="pull-right">46h ago</small>
-                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br/>
-                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html">
-                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                -->
-                <!-- Benachrichtungen
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="mailbox.html">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="profile.html">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        </ul>
-                </li>
-                -->
-
                 <li>
                     <a href="/">
                         <i class="fa fa-sign-out"></i> Abmelden
@@ -128,7 +71,7 @@
         <div class="row">
 
             <!--Contact Start hinzufügen-->
-            <div class="col-lg-4" >
+            <div class="col-lg-4_mitarbeiter" >
                 <a class="dropdown-toggle hinzufügen_modal" data-toggle="modal" data-target="#myModal">
                     <div class="contact-box" class="hover_shadow">
                         <div class="col-sm-4">
@@ -191,46 +134,44 @@
                 <small class="font-bold modal-smalltitle"></small>
             </div>
             <div style="clear:both;"></div>
-            <form>
+            <form method="POST" th:action="@{/studiengruppe/new}" th:object="${newStudiengruppe}">
                 <div class="modal-body form_hinzufügen_links">
                     <div class="form-group">
                         <label>Mentor</label>
-                            <select type="text" placeholder="Mentor" class="form-control modal-mentor">
+                            <select th:field="*{MentorID}" type="text" placeholder="Mentor" class="form-control modal-mentor">
                                 <option value="0">Mentor...</option>
                                 <option value="ID von Hinze">Hintze</option>
                                 <option value="ID von Wilbi">Wilbertix</option>
-                                <option value="ID von Frau">Frau</option>
-                                <option value="ID von Herr">Herr</option>
                             </select>
                     </div>
                     <div class="form-group">
-                        <label>Studiengruppe</label><input type="text" placeholder="Studiengruppe" class="form-control modal-studiengruppe"/>
+                        <label>Studiengruppe</label><input th:field="*{StudiengruppeName}" type="text" placeholder="Studiengruppe" class="form-control modal-studiengruppe"/>
                     </div>
                     <div class="form-group">
-                        <label>Studiengang</label><input type="text" placeholder="Studiengang" class="form-control modal-studiengang"/>
+                        <label>Studiengang</label><input th:field="*{StudiengangName}" type="text" placeholder="Studiengang" class="form-control modal-studiengang"/>
                     </div>
 
                 </div>
                 <div class="modal-body form_hinzufügen_rechts">
                     <div class="form-group">
-                        <label>Abschlusstitel</label><input type="text" placeholder="Abschlusstitel" class="form-control modal-abschlusstitel"/>
+                        <label>Abschlusstitel</label><input th:field="*{abschlussTitel}" type="text" placeholder="Abschlusstitel" class="form-control modal-abschlusstitel"/>
                     </div>
                     <div class="form-group">
-                        <label>Start Datum</label><input type="date" placeholder="TT.MM.JJJJ" class="form-control modal-start"/>
+                        <label>Start Datum</label><input th:field="*{startDatum}" type="date" placeholder="TT.MM.JJJJ" class="form-control modal-start"/>
                     </div>
                     <div class="form-group">
-                        <label>End Datum</label><input type="date" placeholder="TT.MM.JJJJ" class="form-control modal-end"/>
+                        <label>End Datum</label><input th:field="*{endeDatum}" type="date" placeholder="TT.MM.JJJJ" class="form-control modal-end"/>
                     </div>
                 </div>
                 <div style="clear: both;"></div>
                 <div class="modal-footer" style="display:block;">
                     <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
-                    <button type="submit" class="btn btn-primary">Aktualisieren</button>
+                    <button type="submit" class="btn btn-primary">Hinzufügen</button>
                 </div>
             </form>
         </div>
     </div>
-</div> <!--Modalende Studenteninfo-->
+</div> <!--Modalende Studiengruppe hinzufügen-->
 
 
 
@@ -252,52 +193,6 @@
 <script th:src="@{/js/plugins/pace/pace.min.js}"></script>
 <script th:src="@{/static/js/plugins/jquery-ui/jquery-ui.min.js}"></script>
 
-<!-- Page-Level Scripts
-
-<script>
-    $(document).ready(function() {
-        $('.dataTables-example').dataTable({
-            responsive: true,
-            "dom": 'T<"clear">lfrtip',
-            "tableTools": {
-                "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
-            }
-        });
-
-        /* Init DataTables */
-        var oTable = $('#editable').dataTable();
-
-        /* Apply the jEditable handlers to the table */
-        oTable.$('td').editable( '../example_ajax.php', {
-            "callback": function( sValue, y ) {
-                var aPos = oTable.fnGetPosition( this );
-                oTable.fnUpdate( sValue, aPos[0], aPos[1] );
-            },
-            "submitdata": function ( value, settings ) {
-                return {
-                    "row_id": this.parentNode.getAttribute('id'),
-                    "column": oTable.fnGetPosition( this )[2]
-                };
-            },
-
-            "width": "90%",
-            "height": "100%"
-        } );
-
-
-    });
-
-    function fnClickAddRow() {
-        $('#editable').dataTable().fnAddData( [
-            "Custom row",
-            "New row",
-            "New row",
-            "New row",
-            "New row" ] );
-
-    }
-</script>
--->
 
 <style>
     ::-webkit-scrollbar {

@@ -4,6 +4,8 @@ package com.fhdw.objects;
  * Created by timon on 02.05.2017.
  */
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,16 +17,18 @@ public class Studiengruppe {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long StudiengruppenID;
-    private Integer MentorID;
+    private Long MentorID;
     private String StudiengruppeName;
     private String StudiengangName;
     private String AbschlussTitel;
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date StartDatum;
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date EndeDatum;
 
     protected Studiengruppe(){};
 
-    public Studiengruppe(Long studiengruppenID, Integer mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
+    public Studiengruppe(Long studiengruppenID, Long mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
         StudiengruppenID = studiengruppenID;
         MentorID = mentorID;
         StudiengruppeName = studiengruppeName;
@@ -42,11 +46,11 @@ public class Studiengruppe {
         StudiengruppenID = studiengruppenID;
     }
 
-    public Integer getMentorID() {
+    public Long getMentorID() {
         return MentorID;
     }
 
-    public void setMentorID(Integer mentorID) {
+    public void setMentorID(Long mentorID) {
         MentorID = mentorID;
     }
 
