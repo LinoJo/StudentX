@@ -5,14 +5,11 @@ package com.fhdw.controller;
  */
 
 import com.fhdw.objects.Student;
-import com.fhdw.services.domain.IStudentService;
+import com.fhdw.services.domain.studenten.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -38,8 +35,9 @@ public class ControllerStudenten {
         return "redirect:/studenten";
     }
 
-    @RequestMapping(value="/studenten/del", method=RequestMethod.POST)
-    public String removeStudent(@RequestParam("MatrikelID") Long MatID) {
+    @RequestMapping(value="/studenten/del/{MatrikelID}", method=RequestMethod.GET)
+    public String removeStudent(@PathVariable("MatrikelID") Long MatID) {
+        studentService.delStudentByMatrikelID(MatID);
         return "redirect:/studenten";
     }
 }

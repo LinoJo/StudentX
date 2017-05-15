@@ -1,4 +1,4 @@
-package com.fhdw.services.domain;
+package com.fhdw.services.domain.studenten;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +25,10 @@ public class StudentService implements IStudentService{
     @Override
     public Student create(Student student) {
         return studentRepo.save(student);
+    }
+
+    @Override
+    public void delStudentByMatrikelID(Long MatID) {
+        studentRepo.delete(MatID);
     }
 }

@@ -1,7 +1,7 @@
 package com.fhdw.controller;
 
 import com.fhdw.objects.Student;
-import com.fhdw.services.domain.IStudentService;
+import com.fhdw.services.domain.studenten.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

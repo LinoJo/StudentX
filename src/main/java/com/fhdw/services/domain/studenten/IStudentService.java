@@ -1,4 +1,4 @@
-package com.fhdw.services.domain;
+package com.fhdw.services.domain.studenten;
 
 import com.fhdw.objects.Student;
 
@@ -10,4 +10,6 @@ public interface IStudentService {
 	List<Student> getAll();
 
 	Student create(Student student);
+
+	void delStudentByMatrikelID(Long MatID);
 }

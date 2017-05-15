@@ -181,10 +181,7 @@
                                     <td th:text="${student.Nachname}">A</td>
                                     <td th:text="${student.StudienGruppenID}">1</td>
                                     <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
-                                        <form th:action="@{/studenten/del}" th:object="${student}" method="post">
-                                            <input type="hidden" th:value="${student.MatrikelID}" />
-                                            <button class="btn btn-primary delete" type="submit"><i class="fa fa-trash"></i></button>
-                                        </form>
+                                        <a th:href="@{'/studenten/del/' + ${student.MatrikelID}}" class="btn btn-primary del"><i class="fa fa-trash"></i></a>
                                     </td>
                                     <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
                                         <button type="button" th:id="${student.MatrikelID}" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="" onclick="modalLoadData()">

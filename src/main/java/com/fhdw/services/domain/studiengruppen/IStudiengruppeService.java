@@ -1,4 +1,4 @@
-package com.fhdw.services.domain;
+package com.fhdw.services.domain.studiengruppen;
 
 import java.util.List;
 
