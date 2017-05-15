@@ -23,4 +23,8 @@ public class StudiengruppeService implements IStudiengruppeService{
         return (List<Studiengruppe>) StudiengruppeRepo.findAll();
     }
 
+    @Override
+    public Long getCount() {
+        return StudiengruppeRepo.count();
+    }
 }
