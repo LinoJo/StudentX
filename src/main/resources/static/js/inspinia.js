@@ -148,4 +148,46 @@ window.WinMove = function() {
         .disableSelection();
 };
 
+function dataTableSearch() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("myDataSearchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myStudentliste");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td0 = tr[i].getElementsByTagName("td")[0];
+        td1 = tr[i].getElementsByTagName("td")[1];
+        td2 = tr[i].getElementsByTagName("td")[2];
+        td3 = tr[i].getElementsByTagName("td")[3];
+        if (td0) {
+            if (td0.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                if (td1) {
+                    if (td1.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        if (td2) {
+                            if (td2.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                if (td3) {
+                                    if (td3.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                        tr[i].style.display = "";
+                                    } else {
+                                        tr[i].style.display = "none";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+}
+
 

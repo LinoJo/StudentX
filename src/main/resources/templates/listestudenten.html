@@ -151,12 +151,15 @@
                     </div>
                     <div class="ibox-content">
 
+
+                        <input type="text" id="myDataSearchInput" onkeyup="dataTableSearch()" placeholder="Suchen nach ..." title="Type in f***ing everything..."/>
+
                         <div th:if="${!studenten.isEmpty()}">
                             <a href="/studentenexport" class="btn btn-primary" style="float: right;"><span class="nav-label">CSV Export </span><i class="fa fa-download"></i> </a>
                         </div>
 
                         <div th:if="${!studenten.isEmpty()}">
-                            <table class="table table-striped table-bordered table-hover dataTables-example" >
+                            <table class="table table-striped table-bordered table-hover dataTables-example" id="myStudentliste">
                                 <thead>
                                 <tr>
                                     <th>Matrikel-Nr.</th>
@@ -384,8 +387,7 @@
             "New row" ] );
 
     }
-</script>
--->
+</script>-->
 
 <style>
     ::-webkit-scrollbar {
