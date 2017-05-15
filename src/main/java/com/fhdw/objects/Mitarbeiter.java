@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.Base64;
 import java.util.Date;
 import com.fhdw.enums.Role;
 
@@ -29,11 +30,12 @@ public class Mitarbeiter{
     @Enumerated(EnumType.STRING)
     private Role Role;
     private Integer Position; // 1 = Mitarbeiter | 2 = Mentor
+    private Base64 Profilbild;
     private Boolean Activated;
 
     public Mitarbeiter(){}
 
-    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwort, Role role, Integer position, Boolean activated) {
+    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwort, Role role, Integer position, Base64 profilbild, Boolean activated) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -45,6 +47,7 @@ public class Mitarbeiter{
         Passwort = passwort;
         Role = role;
         Position = position;
+        Profilbild = profilbild;
         Activated = activated;
     }
 
@@ -136,6 +139,14 @@ public class Mitarbeiter{
         Position = position;
     }
 
+    public Base64 getProfilbild() {
+        return Profilbild;
+    }
+
+    public void setProfilbild(Base64 profilbild) {
+        Profilbild = profilbild;
+    }
+
     public Boolean getActivated() {
         return Activated;
     }
@@ -158,6 +169,7 @@ public class Mitarbeiter{
                 ", Passwort='" + Passwort + '\'' +
                 ", Role=" + Role +
                 ", Position=" + Position +
+                ", Profilbild=" + Profilbild +
                 ", Activated=" + Activated +
                 '}';
     }
