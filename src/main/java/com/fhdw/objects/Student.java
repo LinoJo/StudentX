@@ -27,6 +27,7 @@ public class Student{
     private Boolean Activated;
     private Long StudienGruppenID;
     private String Praxisfirma;
+
     public Student(){}
 
     public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, Boolean activated, Long studienGruppenID, String praxisfirma) {

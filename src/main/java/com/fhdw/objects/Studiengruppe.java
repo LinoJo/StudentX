@@ -26,7 +26,7 @@ public class Studiengruppe {
     @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date EndeDatum;
 
-    protected Studiengruppe(){};
+    public Studiengruppe(){};
 
     public Studiengruppe(Long studiengruppenID, Long mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
         StudiengruppenID = studiengruppenID;
