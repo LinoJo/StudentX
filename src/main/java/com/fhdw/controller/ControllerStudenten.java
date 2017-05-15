@@ -6,6 +6,7 @@ package com.fhdw.controller;
 
 import com.fhdw.objects.Student;
 import com.fhdw.services.domain.studenten.IStudentService;
+import com.fhdw.services.domain.studiengruppen.IStudiengruppeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,9 @@ import javax.validation.Valid;
 public class ControllerStudenten {
     @Autowired
     private IStudentService studentService;
+
+    @Autowired
+    private IStudiengruppeService studiengruppeService;
 
     @RequestMapping("/studenten")
     public ModelAndView studenten(){

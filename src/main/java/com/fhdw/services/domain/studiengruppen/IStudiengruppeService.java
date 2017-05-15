@@ -8,4 +8,6 @@ public interface IStudiengruppeService {
 	Studiengruppe getStudiengruppeByStudiengruppenID(Long StudiengruppenID);
 	
 	List<Studiengruppe> getAll();
+
+	Long getCount();
 }
