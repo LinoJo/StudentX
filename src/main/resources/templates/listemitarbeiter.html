@@ -84,7 +84,7 @@
             <!--Contact Ende-->
 
             <!--Contact Start-->
-            <div class="col-lg-4_mitarbeiter">
+            <div th:each="mitarbeiter : ${allMitarbeiter}" class="col-lg-4_mitarbeiter">
                 <div class="contact-box hover_shadow">
                     <button type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-edit"></i>
@@ -96,18 +96,23 @@
                         <div class="col-sm-4">
                             <div class="text-center">
                                 <i class="fa fa-user img-responsive" style="font-size: 70px;"></i>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
+                                <div th:switch="${mitarbeiter.Position}">
+                                    <p th:case="1"><div class="m-t-xs font-bold">Mitarbeiter</div></p>
+                                    <p th:case="2"><div class="m-t-xs font-bold">Dozent</div></p>
+                                    <p th:case="*"><div class="m-t-xs font-bold"></div></p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
+                            <h3><strong th:text="${mitarbeiter.Vorname} + ' ' + ${mitarbeiter.Nachname}">Vorname Nachname</strong></h3>
+                            <i class="fa fa-envelope">&nbsp;</i><p style = "display:inline" th:text="${mitarbeiter.Email}">Email</p>
+                            <p></p>
                             <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
+                                <strong th:text="${mitarbeiter.Strasse}">Strasse</strong>
+                                <p th:text="${mitarbeiter.PLZ}">PLZ</p>
+                                <p th:text="${mitarbeiter.Ort}">Ort</p>
                             </address>
+                            <div th:if="${mitarbeiter.role = 'ROLE_ADMIN'}"><strong>Administrator</strong></div>
                         </div>
                         <div class="clearfix"></div>
                     </a>
@@ -155,7 +160,7 @@
                         <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-email"/>
                     </div>
                     <div class="form-group">
-                        <label>Adresse</label><input type="text" th:field="*{Straße}" placeholder="Straße" class="form-control modal-straße"/>
+                        <label>Adresse</label><input type="text" th:field="*{Strasse}" placeholder="Strasse" class="form-control modal-strasse"/>
                     </div>
                     <div class="form-group" style="width:30%;min-width:40px;float:left;">
                         <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz" />
@@ -208,53 +213,6 @@
 <script th:src="@{/js/inspinia.js}"></script>
 <script th:src="@{/js/plugins/pace/pace.min.js}"></script>
 <script th:src="@{/static/js/plugins/jquery-ui/jquery-ui.min.js}"></script>
-
-<!-- Page-Level Scripts
-
-<script>
-    $(document).ready(function() {
-        $('.dataTables-example').dataTable({
-            responsive: true,
-            "dom": 'T<"clear">lfrtip',
-            "tableTools": {
-                "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
-            }
-        });
-
-        /* Init DataTables */
-        var oTable = $('#editable').dataTable();
-
-        /* Apply the jEditable handlers to the table */
-        oTable.$('td').editable( '../example_ajax.php', {
-            "callback": function( sValue, y ) {
-                var aPos = oTable.fnGetPosition( this );
-                oTable.fnUpdate( sValue, aPos[0], aPos[1] );
-            },
-            "submitdata": function ( value, settings ) {
-                return {
-                    "row_id": this.parentNode.getAttribute('id'),
-                    "column": oTable.fnGetPosition( this )[2]
-                };
-            },
-
-            "width": "90%",
-            "height": "100%"
-        } );
-
-
-    });
-
-    function fnClickAddRow() {
-        $('#editable').dataTable().fnAddData( [
-            "Custom row",
-            "New row",
-            "New row",
-            "New row",
-            "New row" ] );
-
-    }
-</script>
--->
 
 <style>
     ::-webkit-scrollbar {
