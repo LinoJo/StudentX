@@ -122,30 +122,26 @@
             </ol>
         </div>
         <div class="col-lg-2">
-
-
-
         </div>
     </div>
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
 
-            <!--Contact Start-->
+            <!--Contact Start hinzufügen-->
             <div class="col-lg-4">
-                <div class="contact-box">
-                    <a class="dropdown-toggle hinzufügen_mobiel" data-toggle="modal" data-target="#myModal1"></a>
+                <a class="dropdown-toggle hinzufügen_modal" data-toggle="modal" data-target="#myModal">
+                    <div class="contact-box">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <i class="fa fa-user-plus img-circle m-t-xs img-responsive"></i>
+                                <i class="fa fa-user-plus img-responsive" style="font-size: 70px"></i>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <h3><strong>Studiengruppe hinzufügen</strong></h3>
-
+                            <h3><strong class="m-t-xs font-bold">Studiengruppe hinzufügen</strong></h3>
                         </div>
                         <div class="clearfix"></div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
             <!--Contact Ende-->
 
@@ -155,7 +151,7 @@
                     <a href="profile.html">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
+                                <i class="fa fa-user img-responsive" style="font-size: 70px"></i>
                                 <div class="m-t-xs font-bold">Graphics designer</div>
                             </div>
                         </div>
@@ -174,85 +170,6 @@
                 </div>
             </div>
             <!--Contact Ende-->
-
-            <!--Contact Start-->
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <a href="profile.html">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Contact Ende-->
-
-            <!--Contact Start-->
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <a href="profile.html">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Contact Ende-->
-
-            <!--Contact Start-->
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <a href="profile.html">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Contact Ende-->
-
 
         </div>
     </div>
@@ -263,40 +180,48 @@
         <div class="modal-content animated bounceInRight">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
-                <i class="fa fa-user modal-icon" style="float:left;"></i>
-                <h4 class="modal-title">Studenteninformationen</h4>
-                <small class="font-bold modal-smalltitle">1 eins</small>
+                <i class="fa fa-user-plus modal-icon" style="float:left;"></i>
+                <h4 class="modal-title">Studentengruppe hinuzfügen</h4>
+                <small class="font-bold modal-smalltitle"></small>
             </div>
             <div style="clear:both;"></div>
-            <div class="modal-body" style="width:45%; float:left;">
-                <div class="form-group">
-                    <label>Vorname</label><input type="text" placeholder="Vorname" class="form-control modal-vorname"/>
+            <form>
+                <div class="modal-body form_hinzufügen_links">
+                    <div class="form-group">
+                        <label>Mentor</label>
+                            <select type="text" placeholder="Mentor" class="form-control modal-mentor">
+                                <option value="0">Mentor...</option>
+                                <option value="ID von Hinze">Hintze</option>
+                                <option value="ID von Wilbi">Wilbertix</option>
+                                <option value="ID von Frau">Frau</option>
+                                <option value="ID von Herr">Herr</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Studiengruppe</label><input type="text" placeholder="Studiengruppe" class="form-control modal-studiengruppe"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Studiengang</label><input type="text" placeholder="Studiengang" class="form-control modal-studiengang"/>
+                    </div>
+
                 </div>
-                <div class="form-group">
-                    <label>Nachname</label><input type="text" placeholder="Nachname" class="form-control modal-nachname"/>
+                <div class="modal-body form_hinzufügen_rechts">
+                    <div class="form-group">
+                        <label>Abschlusstitel</label><input type="text" placeholder="Abschlusstitel" class="form-control modal-abschlusstitel"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Start Datum</label><input type="date" placeholder="TT.MM.JJJJ" class="form-control modal-start"/>
+                    </div>
+                    <div class="form-group">
+                        <label>End Datum</label><input type="date" placeholder="TT.MM.JJJJ" class="form-control modal-end"/>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Studiengruppe:</label><input type="text" placeholder="Studiengruppe" class="form-control modal-studiengruppe"/>
+                <div style="clear: both;"></div>
+                <div class="modal-footer" style="display:block;">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
+                    <button type="submit" class="btn btn-primary">Aktualisieren</button>
                 </div>
-            </div>
-            <div class="modal-body" style="width:45%; float:right;">
-                <p><strong>2zwei</strong> 3drei</p>
-                <div class="fach_select" style="margin:3px 3px 3px 0;">
-                    <select class="sel_Fach" name="sel_Fach[]" style="padding:2px 4px;">
-                        <option value="0">Fach wählen...</option>
-                        <option value="SRM">SRM</option>
-                        <option value="SAM">SAM</option>
-                        <option value="ITS">ITS</option>
-                        <option value="WRE">WRE</option>
-                    </select>
-                </div>
-                <div class="form-group"><label>Sample Input</label> <input type="email" placeholder="Enter your email" class="form-control"/></div>
-            </div>
-            <div style="clear:both;"></div>
-            <div class="modal-footer" style="display:block;">
-                <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
-                <button type="button" class="btn btn-primary">Änderunng Speichern</button>
-            </div>
+            </form>
         </div>
     </div>
 </div> <!--Modalende Studenteninfo-->
