@@ -152,8 +152,8 @@
                     <div class="ibox-content">
 
 
-                       <!-- th:if="${!studenten.isEmpty()}"-->
-                        <div>
+                       <!-- -->
+                        <div th:if="${!studenten.isEmpty()}">
                             <input type="text" id="myDataSearchInput" onkeyup="dataTableSearch()" class="btn btn-primary" placeholder="Suchen nach ..." title="Type in f***ing everything..." style="background: transparent; color: #293846; text-align: left;"/>
 
                             <a href="/studentenexport" style="float: right;" class="btn btn-primary" ><span class="nav-label">CSV Export </span><i class="fa fa-download"></i> </a>
