@@ -78,7 +78,7 @@ public class ServerGui extends JFrame implements ActionListener {
 			Thread t = new Thread(){
 				public void run(){
 					StudentxApplication.start();
-					System.out.println("\n################\nStudentX is ready to go\n##############\n");
+					System.out.println("\n###############\nStudentX is ready to go\n###############\n");
 				}
 			};
 			t.start();

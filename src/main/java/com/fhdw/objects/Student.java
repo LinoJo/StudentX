@@ -1,5 +1,7 @@
 package com.fhdw.objects;
 
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * Created by timon on 02.05.2017.
  */
@@ -10,10 +12,13 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity // Hibernate erstellt eine Tabelle aus dieser Klasse
+@TableGenerator(name="gen",initialValue=0, allocationSize=10000000)
+@SequenceGenerator(name="seq", sequenceName="DATA_SEQ",initialValue=1, allocationSize=10000000)
+@GenericGenerator(name="generator", strategy="increment")
 public class Student{
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(generator="generator")
     private Long MatrikelID;
     private String Vorname;
     private String Nachname;
