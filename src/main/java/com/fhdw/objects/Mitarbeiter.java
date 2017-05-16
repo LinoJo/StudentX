@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 import java.util.Date;
 import com.fhdw.enums.Role;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * Created by timon on 02.05.2017.
@@ -19,6 +20,7 @@ public class Mitarbeiter{
     private String Vorname;
     private String Nachname;
     private String Geschlecht;
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date Geburtsdatum;
     private Integer PLZ;
     private String Ort;
