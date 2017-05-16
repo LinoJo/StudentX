@@ -11,5 +11,5 @@ public interface IStudentService {
 
 	Student create(Student student);
 
-	void delStudentByMatrikelID(Long MatID);
+	void delStudentByMatrikelID(Long matID);
 }
