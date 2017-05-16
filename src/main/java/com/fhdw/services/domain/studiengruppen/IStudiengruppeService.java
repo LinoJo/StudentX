@@ -5,11 +5,13 @@ import java.util.List;
 import com.fhdw.objects.Studiengruppe;
 
 public interface IStudiengruppeService {
-	Studiengruppe getStudiengruppeByStudiengruppenID(Long StudiengruppenID);
+	Studiengruppe getStudiengruppeByStudiengruppenID(Long studiengruppenID);
 	
 	List<Studiengruppe> getAll();
 
 	Long getCount();
+	
+	void delStudiengruppeByID(Long studiengruppenID);
 
 	Studiengruppe create(Studiengruppe studiengruppe);
 }

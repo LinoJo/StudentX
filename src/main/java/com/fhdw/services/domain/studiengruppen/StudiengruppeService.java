@@ -32,4 +32,8 @@ public class StudiengruppeService implements IStudiengruppeService{
     public Studiengruppe create(Studiengruppe studiengruppe) {
         return StudiengruppeRepo.save(studiengruppe);
     }
+    @Override
+    public void delStudiengruppeByID(Long studiengruppenID) {
+        StudiengruppeRepo.delete(studiengruppenID);
+    }
 }
