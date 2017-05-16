@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.Date;
 
 @Controller
 public class ControllerStudenten {
@@ -28,6 +29,7 @@ public class ControllerStudenten {
         ModelAndView mav = new ModelAndView("listestudenten");
         mav.addObject("studenten", studentService.getAll());
         mav.addObject("studiengruppen", studiengruppeService.getAll());
+        mav.addObject("updateStudent", new Student());
         mav.addObject("newStudent", new Student());
         return mav;
     }
@@ -37,6 +39,34 @@ public class ControllerStudenten {
         if(!result.hasErrors()){
             studentService.create(student);
         }
+        return "redirect:/studenten";
+    }
+
+    @RequestMapping(value = "/studenten/update", method = RequestMethod.POST)
+    public String updateStudent(@RequestParam("MatrikelID") Long MatrikelID,
+                                @RequestParam("Vorname") String Vorname,
+                                @RequestParam("Nachname") String Nachname,
+                                @RequestParam("Geschlecht") String Geschlecht,
+                                @RequestParam("Email") String Email,
+                                @RequestParam("Geburtsdatum") Date Geburtsdatum,
+                                @RequestParam("Strasse") String Strasse,
+                                @RequestParam("PLZ") Integer PLZ,
+                                @RequestParam("Ort") String Ort,
+                                @RequestParam("StudienGruppenID") Long StudienGruppenID,
+                                @RequestParam("Praxisfirma") String Praxisfirma
+    ){
+        Student stdt = studentService.getStudentByMatrikelID(MatrikelID);
+        stdt.setVorname(Vorname);
+        stdt.setNachname(Nachname);
+        stdt.setGeschlecht(Geschlecht);
+        stdt.setEmail(Email);
+        stdt.setGeburtsdatum(Geburtsdatum);
+        stdt.setStrasse(Strasse);
+        stdt.setPLZ(PLZ);
+        stdt.setOrt(Ort);
+        stdt.setStudienGruppenID(StudienGruppenID);
+        stdt.setPraxisfirma(Praxisfirma);
+
         return "redirect:/studenten";
     }
 
