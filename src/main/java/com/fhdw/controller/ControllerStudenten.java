@@ -40,13 +40,20 @@ public class ControllerStudenten {
         return "redirect:/studenten";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/studenten/load/{id}", method = RequestMethod.GET)
+    public Student loadEntity(@PathVariable("id") Long id) {
+        return studentService.getStudentByMatrikelID(id);
+    }
+
+    /*
     @RequestMapping(value = "/studenten/update", method = RequestMethod.POST)
     public String updateStudent(@Valid @ModelAttribute("updateStudent") Student student, BindingResult result) {
         if(!result.hasErrors()){
             //studentService.update(student);
         }
         return "redirect:/studenten";
-    }
+    }*/
 
     @RequestMapping(value="/studenten/del/{MatrikelID}", method=RequestMethod.GET)
     public String removeStudent(@PathVariable("MatrikelID") Long MatID) {
