@@ -111,8 +111,19 @@
                                         <a th:href="@{'/studenten/del/' + ${student.MatrikelID}}" class="btn btn-primary del"><i class="fa fa-trash"></i></a>
                                     </td>
                                     <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
-                                        <a th:id="${student.MatrikelID}" class="btn btn-primary edit_studenten" data-toggle="modal" data-target="#myModal" th:onclick="'showEditModal(' + ${student.MatrikelID} + ')'">
+                                        <a th:id="${student.MatrikelID}" class="btn btn-primary edit_studenten" data-toggle="modal" data-target="#myModal">
                                             <i class="fa fa-edit"></i>
+                                            <input type="hidden" class="edit_Geschlecht" th:id="${student.Geschlecht}"/>
+                                            <input type="hidden" class="edit_Vorname" th:id="${student.Vorname}"/>
+                                            <input type="hidden" class="edit_Nachname" th:id="${student.Nachname}"/>
+                                            <input type="hidden" class="edit_Email" th:id="${student.Email}"/>
+                                            <input type="hidden" class="edit_Geburtsdatum" th:id="${student.Geburtsdatum}"/>
+                                            <input type="hidden" class="edit_PLZ" th:id="${student.PLZ}"/>
+                                            <input type="hidden" class="edit_Ort" th:id="${student.Ort}"/>
+                                            <!--<input type="hidden" class="edit_Strasse" th:id="${student.Straße}"/>-->
+                                            <input type="hidden" class="edit_Activated" th:id="${student.Activated}"/>
+                                            <input type="hidden" class="edit_StudienGruppenID" th:id="${student.StudienGruppenID}"/>
+                                            <input type="hidden" class="edit_Praxisfirma" th:id="${student.Praxisfirma}"/>
                                         </a>
                                     </td>
                                 </tr>
@@ -152,7 +163,7 @@
                                     <div class="modal-body form_hinzufügen_links">
                                         <div class="form-group">
                                             <label>Anrede</label>
-                                            <select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede">
+                                            <select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede_edit">
                                                 <option value="m">Herr</option>
                                                 <option value="w">Frau</option>
                                             </select>
@@ -164,31 +175,31 @@
                                             <input type="text" placeholder="Vorname" th:field="*{Vorname}" class="form-control modal-vorname_edit"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>E-Mail</label><input type="email" th:field="*{Email}" placeholder="EMail" class="form-control modal-email"/>
+                                            <label>E-Mail</label><input type="email" th:field="*{Email}" placeholder="EMail" class="form-control modal-email_edit"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-email"/>
+                                            <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-geburstag_edit"/>
                                         </div>
                                     </div>
                                     <div class="modal-body form_hinzufügen_rechts">
                                         <div class="form-group">
                                             <label>Studiengruppe</label>
-                                            <select type="text"  th:field="*{StudienGruppenID}" placeholder="Studiengruppe" class="form-control modal-studiengruppe">
+                                            <select type="text"  th:field="*{StudienGruppenID}" placeholder="Studiengruppe" class="form-control modal-studiengruppe modal-studiengruppe_edit">
                                                 <option th:each="studiengruppe : ${studiengruppen}" th:value="${studiengruppe.StudiengruppenID}" th:text="${studiengruppe.StudiengruppeName}"></option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Adresse</label><input type="text" th:field="*{Straße}" placeholder="Straße" class="form-control modal-strasse"/>
+                                            <label>Adresse</label><input type="text" th:field="*{Straße}" placeholder="Straße" class="form-control modal-strasse_edit"/>
                                         </div>
                                         <div class="form-group" style="width:30%;min-width:40px;float:left;">
-                                            <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz" />
+                                            <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz_edit" />
                                         </div>
                                         <div class="form-group" style="width:67.5%;min-width:60px;float:right;">
-                                            <input type="text" th:field="*{Ort}" placeholder="Ort" class="form-control modal-ort" />
+                                            <input type="text" th:field="*{Ort}" placeholder="Ort" class="form-control modal-ort_edit" />
                                         </div>
                                         <div style="clear: both;"></div>
                                         <div class="form-group">
-                                            <label>Praxisfirma</label><input type="text" th:field="*{Praxisfirma}" placeholder="Praxisfirma" class="form-control modal-praxisfirma"/>
+                                            <label>Praxisfirma</label><input type="text" th:field="*{Praxisfirma}" placeholder="Praxisfirma" class="form-control modal-praxisfirma_edit"/>
                                         </div>
                                     </div>
                                     <div style="clear:both;"></div>
