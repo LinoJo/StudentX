@@ -5051,6 +5051,16 @@ float: right;
 .studieninfo_text{
   margin-top: 5px;
 }
+.index_icon_div{
+  margin-right: 3%;
+  float: left;
+}
+.index_icon{
+  font-size: -webkit-xxx-large;
+  font-size: xxx-large;
+  float: left;
+  min-height: 122px;
+}
 
 .abmelden_button{
   float: right;
@@ -5073,9 +5083,6 @@ float: right;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-}
-.col-lg-4_mitarbeiter > .contact-box {
-  min-height: 1px; !important;
 }
 
 @media (min-width: 1200px) {
@@ -5104,7 +5111,16 @@ float: right;
   border:none;
 }
 
+/*klein neben einander*/
 @media (min-width: 1310px) {
+  .index_icon_div{
+    margin-right: 6%;
+  }
+
+  .index_box{
+    min-height: 210px; !important;
+  }
+
   .col-lg-4_mitarbeiter {
     width: 33.33333333%;
     float: left;
@@ -5114,7 +5130,12 @@ float: right;
   }
 }
 
+/*breit über einander*/
 @media (max-width: 1310px) {
+  .index_icon_div{
+    margin-right: 3%;
+  }
+
   .contact_button_trash {
     bottom: 1px;!important;
   }
@@ -5137,6 +5158,9 @@ float: right;
   }
 }
 
+.col-lg-4_mitarbeiter > .contact-box {
+  /*min-height: 1px;*/
+}
 
 @media (min-width: 400px) {
   .hinzufügen_mobiel::before {
