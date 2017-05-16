@@ -82,18 +82,13 @@
             <!--Contact Start-->
             <div th:each="studiengruppe : ${studiengruppen}" class="col-lg-4_mitarbeiter">
                 <div class="contact-box hover_shadow">
-                    <button sec:authorize="hasRole('ROLE_ADMIN')" type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button sec:authorize="hasRole('ROLE_ADMIN')" type="button" class="btn btn-primary trash contact_button_trash" data-toggle="modal" data-target="#myModal">
-                        <a th:href="@{'/studiengruppe/del/' + ${studiengruppe.StudiengruppenID}}" class="btn btn-primary del"><i class="fa fa-trash"></i></a>
-                    </button>
+                    <a th:href="@{'/studiengruppe/del/' + ${studiengruppe.StudiengruppenID}}" class="btn btn-primary trash contact_button_trash" sec:authorize="hasRole('ROLE_ADMIN')"><i class="fa fa-trash"></i></a>
                     <div class="col-sm-12">
                         <h3><strong th:text="${studiengruppe.StudiengruppeName}"></strong></h3>
                         <div class="studieninfo_text">
                             <div class="studiengruppe_infolinks">
                                 <p th:text="${studiengruppe.StudiengangName}"></p>
-                                <p th:text="${studiengruppe.MentorID}"></p>
+                                <p th:text="${studiengruppe.MentorEmail}"></p>
                             </div>
                             <div class="studiengruppe_inforechts">
                                 <p th:text="${#dates.format(studiengruppe.StartDatum, 'dd-MM-yyyy')}"></p>
@@ -144,9 +139,8 @@
                 <div class="modal-body form_hinzufügen_links">
                     <div class="form-group">
                         <label>Mentor</label>
-                            <select th:field="*{MentorID}" type="text" placeholder="Mentor" class="form-control modal-mentor">
-                                <option value="0">Mentor</option>
-                                <option th:each="mitarbeiter : ${mitarbeiter}" th:if="${mitarbeiter.Position} == 2" th:value="${mitarbeiter.Email}" th:text="${mitarbeiter.Nachname}"></option>
+                            <select th:field="*{MentorEmail}" type="text" placeholder="Mentor" class="form-control modal-mentor">
+                                <option th:each="mitarbeiter : ${mitarbeiter}" th:if="${mitarbeiter.Position} == 2" th:value="${mitarbeiter.Email}" th:text="${mitarbeiter.Nachname} + ', ' + ${mitarbeiter.Vorname}"></option>
                             </select>
                     </div>
                     <div class="form-group">
