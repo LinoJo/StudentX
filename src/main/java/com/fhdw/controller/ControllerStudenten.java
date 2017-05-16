@@ -39,7 +39,7 @@ public class ControllerStudenten {
         }
         return "redirect:/studenten";
     }
-
+    
     @RequestMapping(value = "/studenten/update", method = RequestMethod.POST)
     public String updateStudent(@Valid @ModelAttribute("updateStudent") Student student, BindingResult result) {
         if(!result.hasErrors()){
