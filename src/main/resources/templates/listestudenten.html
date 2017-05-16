@@ -159,50 +159,50 @@
                                     <small class="font-bold modal-smalltitle"></small>
                                 </div>
                                 <div style="clear:both;"></div>
-                                <form method="POST" th:action="@{/studenten/update}" th:object="${updateStudent}">
+                                <form method="POST" th:action="@{/studenten/update}">
                                     <div class="modal-body form_hinzufügen_links">
                                         <div class="form-group">
                                             <label>Anrede</label>
-                                            <select th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede_edit">
+                                            <select name="Geschlecht" placeholder="Anrede" class="form-control modal-anrede_edit">
                                                 <option value="m">Herr</option>
                                                 <option value="w">Frau</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Name</label><input type="text" th:field="*{Nachname}" placeholder="Nachname" class="form-control modal-nachname_edit"/>
+                                            <label>Name</label><input type="text" placeholder="Nachname" name="Nachname" class="form-control modal-nachname_edit"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" placeholder="Vorname" th:field="*{Vorname}" class="form-control modal-vorname_edit"/>
+                                            <input type="text" placeholder="Vorname" name="Vorname" class="form-control modal-vorname_edit"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>E-Mail</label><input type="email" th:field="*{Email}" placeholder="EMail" class="form-control modal-email_edit"/>
+                                            <label>E-Mail</label><input type="email" name="Email" placeholder="EMail" class="form-control modal-email_edit"/>
                                         </div>
                                         <div class="form-group">
-                                            <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-geburstag_edit"/>
+                                            <label>Geburtstag</label><input type="date" name="Geburtstag" placeholder="TT.MM.JJJJ" class="form-control modal-geburstag_edit"/>
                                         </div>
                                     </div>
                                     <div class="modal-body form_hinzufügen_rechts">
                                         <div class="form-group">
                                             <label>Studiengruppe</label>
-                                            <select type="text"  th:field="*{StudienGruppenID}" placeholder="Studiengruppe" class="form-control modal-studiengruppe modal-studiengruppe_edit">
+                                            <select type="text"  placeholder="Studiengruppe" class="form-control modal-studiengruppe modal-studiengruppe_edit" name="StudienGruppenID">
                                                 <option th:each="studiengruppe : ${studiengruppen}" th:value="${studiengruppe.StudiengruppenID}" th:text="${studiengruppe.StudiengruppeName}"></option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Adresse</label><input type="text" th:field="*{Strasse}" placeholder="Straße" class="form-control modal-strasse_edit"/>
+                                            <label>Adresse</label><input type="text" name="Strasse" placeholder="Straße" class="form-control modal-strasse_edit"/>
                                         </div>
                                         <div class="form-group" style="width:30%;min-width:40px;float:left;">
-                                            <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz_edit" />
+                                            <input type="text" name="PLZ" placeholder="PLZ" class="form-control modal-plz_edit" />
                                         </div>
                                         <div class="form-group" style="width:67.5%;min-width:60px;float:right;">
-                                            <input type="text" th:field="*{Ort}" placeholder="Ort" class="form-control modal-ort_edit" />
+                                            <input type="text" name="Ort" placeholder="Ort" class="form-control modal-ort_edit" />
                                         </div>
                                         <div class="form-group">
-                                            <label>Praxisfirma</label><input type="text" th:field="*{Praxisfirma}" placeholder="Praxisfirma" class="form-control modal-praxisfirma_edit"/>
+                                            <label>Praxisfirma</label><input type="text" name="Praxisfirma" placeholder="Praxisfirma" class="form-control modal-praxisfirma_edit"/>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>MatikelNr.</label><input disabled="disabled" style="cursor: default" type="text" th:field="*{MatrikelID}" placeholder="MatrikelID" class="form-control modal-matrikelID_edit"/>
+                                            <label>MatikelNr.</label><input name="MatrikelID" readonly="true" style="cursor: default" type="text" placeholder="MatrikelID" class="form-control modal-matrikelID_edit"/>
                                         </div>
                                         <div style="clear: both;"></div>
                                     </div>

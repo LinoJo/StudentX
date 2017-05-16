@@ -31,4 +31,9 @@ public class StudentService implements IStudentService{
     public void delStudentByMatrikelID(Long MatID) {
         studentRepo.delete(MatID);
     }
+
+    @Override
+    public void updateStudent(Student student) {
+        studentRepo.save(student);
+    }
 }
