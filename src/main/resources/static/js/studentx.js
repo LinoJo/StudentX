@@ -3,7 +3,7 @@
  */
 
 $(document).on("click",".edit_studenten",function() {
-
+    var id = $(this).attr("id");
     var anrede      = $(this).find("#edit_Geschlecht").val();
     var vorname     = $(this).find("#edit_Vorname").val();
     var nachname    = $(this).find("#edit_Nachname").val();
@@ -14,6 +14,7 @@ $(document).on("click",".edit_studenten",function() {
     var strasse     = $(this).find("#edit_Strasse").val();
     /*var aktive    = $(this).find("#edit_Activated").val();*/
     var studiengruppenID = $(this).find("#edit_StudienGruppenID").val();
+    var praxisfirma = $(this).find("#edit_Praxisfirma").val();
     var praxisfirma = $(this).find("#edit_Praxisfirma").val();
 
     $('.modal-anrede_edit').val(anrede);
@@ -26,5 +27,6 @@ $(document).on("click",".edit_studenten",function() {
     $('.modal-strasse_edit').val(strasse);
     $('.modal-studiengang_edit').val(studiengruppenID);
     $('.modal-praxisfirma_edit').val(praxisfirma);
+    $('.modal-matrikelID_edit').val(id);
 
 });
