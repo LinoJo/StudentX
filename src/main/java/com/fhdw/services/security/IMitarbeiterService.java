@@ -13,4 +13,6 @@ public interface IMitarbeiterService {
     List<Mitarbeiter> getAll();
 
     void delMitarbeiterByEmail(String Email);
+
+    void updateMitarbeiter(Mitarbeiter mitarbeiter);
 }
