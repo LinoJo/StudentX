@@ -88,7 +88,7 @@
                         <div class="studieninfo_text">
                             <div class="studiengruppe_infolinks">
                                 <p th:text="${studiengruppe.StudiengangName}"></p>
-                                <p th:text="${studiengruppe.MentorEmail}"></p>
+                                <p th:each="ma : ${mitarbeiter}" th:if="${ma.Email} == ${studiengruppe.MentorEmail}" th:text="${ma.Nachname} + ', ' + ${ma.Vorname}">Name</p>
                             </div>
                             <div class="studiengruppe_inforechts">
                                 <p th:text="${#dates.format(studiengruppe.StartDatum, 'dd-MM-yyyy')}"></p>
