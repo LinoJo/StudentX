@@ -16,8 +16,15 @@ $(document).on("click",".edit_studenten",function() {
     var studiengruppenID = $(this).find("#edit_StudienGruppenID").val();
     var praxisfirma = $(this).find("#edit_Praxisfirma").val();
 
-    //$('.modal-anrede_edit').selectedIndex = anrede;
+    $('.modal-anrede_edit').val(anrede);
     $('.modal-vorname_edit').val(vorname);
     $('.modal-nachname_edit').val(nachname);
+    $('.modal-email_edit').val(email);
+    $('.modal-geburstag_edit').val(geburtsdatum);
+    $('.modal-plz_edit').val(plz);
+    $('.modal-ort_edit').val(ort);
+    $('.modal-strasse_edit').val(strasse);
+    $('.modal-studiengang_edit').val(studiengruppenID);
+    $('.modal-praxisfirma_edit').val(praxisfirma);
 
 });
