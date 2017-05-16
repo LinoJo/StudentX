@@ -106,7 +106,7 @@
                                     <td th:text="${student.MatrikelID}">1</td>
                                     <td th:text="${student.Vorname}">A</td>
                                     <td th:text="${student.Nachname}">A</td>
-                                    <td th:text="${student.StudienGruppenID}">1</td>
+                                    <td th:each="studiengruppe : ${studiengruppen}" th:if="${studiengruppe.StudiengruppenID} == ${student.StudienGruppenID}" th:text="${studiengruppe.StudiengruppeName}">Name</td>
                                     <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
                                         <a th:href="@{'/studenten/del/' + ${student.MatrikelID}}" class="btn btn-primary del"><i class="fa fa-trash"></i></a>
                                     </td>

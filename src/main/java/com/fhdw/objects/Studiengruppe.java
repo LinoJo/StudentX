@@ -17,7 +17,7 @@ public class Studiengruppe {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long StudiengruppenID;
-    private Long MentorID;
+    private String MentorEmail;
     private String StudiengruppeName;
     private String StudiengangName;
     private String AbschlussTitel;
@@ -28,9 +28,9 @@ public class Studiengruppe {
 
     public Studiengruppe(){};
 
-    public Studiengruppe(Long studiengruppenID, Long mentorID, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
+    public Studiengruppe(Long studiengruppenID, String mentorEmail, String studiengruppeName, String studiengangName, String abschlussTitel, Date startDatum, Date endeDatum) {
         StudiengruppenID = studiengruppenID;
-        MentorID = mentorID;
+        MentorEmail = mentorEmail;
         StudiengruppeName = studiengruppeName;
         StudiengangName = studiengangName;
         AbschlussTitel = abschlussTitel;
@@ -46,12 +46,12 @@ public class Studiengruppe {
         StudiengruppenID = studiengruppenID;
     }
 
-    public Long getMentorID() {
-        return MentorID;
+    public String getMentorEmail() {
+        return MentorEmail;
     }
 
-    public void setMentorID(Long mentorID) {
-        MentorID = mentorID;
+    public void setMentorEmail(String mentorEmail) {
+        MentorEmail = mentorEmail;
     }
 
     public String getStudiengruppeName() {
@@ -98,7 +98,7 @@ public class Studiengruppe {
     public String toString() {
         return "Studiengruppe{" +
                 "StudiengruppenID=" + StudiengruppenID +
-                ", MentorID=" + MentorID +
+                ", MentorEmail=" + MentorEmail +
                 ", StudiengruppeName='" + StudiengruppeName + '\'' +
                 ", StudiengangName='" + StudiengangName + '\'' +
                 ", AbschlussTitel='" + AbschlussTitel + '\'' +
