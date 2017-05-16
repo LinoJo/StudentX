@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" sec:authorize="hasRole('ROLE_ADMIN')">
+<html lang="de">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -83,13 +83,12 @@
             <!--Contact Start-->
             <div th:each="mitarbeiter : ${allMitarbeiter}" class="col-lg-4_mitarbeiter">
                 <div class="contact-box hover_shadow">
-                    <button type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal">
+                    <button type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal" sec:authorize="hasRole('ROLE_ADMIN')">
                         <i class="fa fa-edit"></i>
                     </button>
-                    <button type="button" class="btn btn-primary trash contact_button_trash" data-toggle="modal" data-target="#myModal">
+                    <button type="button" class="btn btn-primary trash contact_button_trash" data-toggle="modal" data-target="#myModal" sec:authorize="hasRole('ROLE_ADMIN')">
                         <i class="fa fa-trash"></i>
                     </button>
-                    <a href="">
                         <div class="col-sm-4">
                             <div class="text-center">
                                 <i class="fa fa-user img-responsive" style="font-size: 70px;"></i>
@@ -112,7 +111,6 @@
                             <div th:if="${mitarbeiter.role = 'ROLE_ADMIN'}"><strong>Administrator</strong></div>
                         </div>
                         <div class="clearfix"></div>
-                    </a>
                 </div>
             </div>
             <!--Contact Ende-->
