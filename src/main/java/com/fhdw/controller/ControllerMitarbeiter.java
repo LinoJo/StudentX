@@ -109,7 +109,7 @@ public class ControllerMitarbeiter {
         return "redirect:/mitarbeiter";
     }
 
-    @RequestMapping(value="/mitarbeiter/del/{Email}", method=RequestMethod.GET)
+    @RequestMapping(value="/mitarbeiter/del/{Email:.+}", method=RequestMethod.GET)
     public String removeStudent(@PathVariable("Email") String Email) {
         mitarbeiterService.delMitarbeiterByEmail(Email);
         return "redirect:/mitarbeiter";

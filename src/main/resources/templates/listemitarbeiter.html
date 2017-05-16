@@ -86,9 +86,7 @@
                     <button type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal" sec:authorize="hasRole('ROLE_ADMIN')">
                         <i class="fa fa-edit"></i>
                     </button>
-                    <button type="button" class="btn btn-primary trash contact_button_trash" data-toggle="modal" data-target="#myModal" sec:authorize="hasRole('ROLE_ADMIN')">
-                        <i class="fa fa-trash"></i>
-                    </button>
+                    <a th:href="@{'/mitarbeiter/del/' + ${mitarbeiter.Email}}" class="btn btn-primary trash contact_button_trash" sec:authorize="hasRole('ROLE_ADMIN')"><i class="fa fa-trash"></i></a>
                         <div class="col-sm-4">
                             <div class="text-center">
                                 <i class="fa fa-user img-responsive" style="font-size: 70px;"></i>
