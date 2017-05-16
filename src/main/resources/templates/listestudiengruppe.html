@@ -33,11 +33,6 @@
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                <!--<form role="search" class="navbar-form-custom" method="post" action="search_results.html">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nach etwas suchen..." class="form-control" name="top-search" id="top-search"/>
-                    </div>
-                </form>-->
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
@@ -87,10 +82,10 @@
             <!--Contact Start-->
             <div th:each="studiengruppe : ${studiengruppen}" class="col-lg-4_mitarbeiter">
                 <div class="contact-box hover_shadow">
-                    <button type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal">
+                    <button sec:authorize="hasRole('ROLE_ADMIN')" type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-edit"></i>
                     </button>
-                    <button type="button" class="btn btn-primary trash contact_button_trash" data-toggle="modal" data-target="#myModal">
+                    <button sec:authorize="hasRole('ROLE_ADMIN')" type="button" class="btn btn-primary trash contact_button_trash" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-trash"></i>
                     </button>
                     <div class="col-sm-12">
@@ -101,8 +96,8 @@
                                 <p th:text="${studiengruppe.MentorID}"></p>
                             </div>
                             <div class="studiengruppe_inforechts">
-                                <p th:text="${studiengruppe.StartDatum}"></p>
-                                <p th:text="${studiengruppe.EndeDatum}"></p>
+                                <p th:text="${#dates.format(studiengruppe.StartDatum, 'dd-MM-yyyy')}"></p>
+                                <p th:text="${#dates.format(studiengruppe.EndeDatum, 'dd-MM-yyyy')}"></p>
                             </div>
                             <div style="clear: both;"></div>
                         </div>
