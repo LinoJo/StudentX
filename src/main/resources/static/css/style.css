@@ -5052,6 +5052,13 @@ float: right;
   margin-top: 5px;
 }
 
+.abmelden_button{
+  float: right;
+  padding: 4px 12px;
+  margin: 14px 5px 5px 20px;
+  font-size: 14px;
+}
+
 
 ::-webkit-scrollbar {
   display: none;
