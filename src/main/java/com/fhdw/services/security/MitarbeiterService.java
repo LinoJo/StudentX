@@ -24,4 +24,9 @@ public class MitarbeiterService implements IMitarbeiterService{
     public List<Mitarbeiter> getAll() {
         return (List<Mitarbeiter>) mitarbeiterRepo.findAll();
     }
+
+    @Override
+    public void delMitarbeiterByEmail(String Email) {
+        mitarbeiterRepo.delete(Email);
+    }
 }

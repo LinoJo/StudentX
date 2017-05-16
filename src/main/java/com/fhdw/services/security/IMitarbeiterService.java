@@ -11,4 +11,6 @@ public interface IMitarbeiterService {
     Mitarbeiter getMitarbeiterByEmail(String Email);
 
     List<Mitarbeiter> getAll();
+
+    void delMitarbeiterByEmail(String Email);
 }
