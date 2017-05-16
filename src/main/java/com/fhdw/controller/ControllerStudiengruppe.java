@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fhdw.services.domain.studiengruppen.IStudiengruppeService;
+import com.fhdw.services.security.IMitarbeiterService;
 import com.fhdw.services.domain.studenten.IStudentService;
 
 import javax.validation.Valid;
@@ -24,7 +25,7 @@ public class ControllerStudiengruppe {
 	private IStudentService studentService;
 	
 	@Autowired
-	private IStudentService mitarbeiterService;
+	private IMitarbeiterService mitarbeiterService;
 
     @RequestMapping("/studiengruppe")
     public ModelAndView studiengruppe(){
