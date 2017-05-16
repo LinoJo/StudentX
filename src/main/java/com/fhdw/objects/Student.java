@@ -28,14 +28,14 @@ public class Student{
     private Date Geburtsdatum;
     private Integer PLZ;
     private String Ort;
-    private String Straße;
+    private String Strasse;
     private Boolean Activated;
     private Long StudienGruppenID;
     private String Praxisfirma;
 
     public Student(){}
 
-    public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, Boolean activated, Long studienGruppenID, String praxisfirma) {
+    public Student(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String strasse, Boolean activated, Long studienGruppenID, String praxisfirma) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -43,7 +43,7 @@ public class Student{
         Geburtsdatum = geburtsdatum;
         this.PLZ = PLZ;
         Ort = ort;
-        Straße = straße;
+        Strasse = strasse;
         Activated = activated;
         StudienGruppenID = studienGruppenID;
         Praxisfirma = praxisfirma;
@@ -113,12 +113,12 @@ public class Student{
         Ort = ort;
     }
 
-    public String getStraße() {
-        return Straße;
+    public String getStrasse() {
+        return Strasse;
     }
 
-    public void setStraße(String straße) {
-        Straße = straße;
+    public void setStrasse(String strasse) {
+        Strasse = strasse;
     }
 
     public Boolean getActivated() {
@@ -156,7 +156,7 @@ public class Student{
                 ", Geburtsdatum=" + Geburtsdatum +
                 ", PLZ=" + PLZ +
                 ", Ort='" + Ort + '\'' +
-                ", Straße='" + Straße + '\'' +
+                ", Strasse='" + Strasse + '\'' +
                 ", Activated=" + Activated +
                 ", StudienGruppenID=" + StudienGruppenID +
                 ", Praxisfirma='" + Praxisfirma + '\'' +

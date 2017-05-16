@@ -10,6 +10,7 @@ import com.fhdw.services.security.IMitarbeiterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -59,7 +60,7 @@ public class ControllerMitarbeiter {
     }
     
     @RequestMapping(value = "/mitarbeiter/new", method = RequestMethod.POST)
-    public void saveMitarbeiter(
+    public String saveMitarbeiter(
             @RequestParam("Vorname") String Vorname,
             @RequestParam("Nachname") String Nachname,
             @RequestParam("Geschlecht") String Geschlecht,
@@ -67,7 +68,7 @@ public class ControllerMitarbeiter {
             @RequestParam("Passwort") String Passwort,
             @RequestParam("Geburtsdatum") String Geburtsdatum,
             @RequestParam("Strasse") String Strasse,
-            @RequestParam("PLZ") String PLZ,
+            @RequestParam("PLZ") Integer PLZ,
             @RequestParam("Ort") String Ort,
             @RequestParam("Position") Integer Position,
             @RequestParam("Role") Integer Role
@@ -99,7 +100,18 @@ public class ControllerMitarbeiter {
         ma.setActivated(Boolean.TRUE);
         ma.setGeschlecht(Geschlecht);
         ma.setPosition(Position);
+        ma.setStrasse(Strasse);
+        ma.setPLZ(PLZ);
+        ma.setOrt(Ort);
 
         mitarbeiterRepo.save(ma);
+
+        return "redirect:/mitarbeiter";
+    }
+
+    @RequestMapping(value="/mitarbeiter/del/{Email:.+}", method=RequestMethod.GET)
+    public String removeStudent(@PathVariable("Email") String Email) {
+        mitarbeiterService.delMitarbeiterByEmail(Email);
+        return "redirect:/mitarbeiter";
     }
 }
