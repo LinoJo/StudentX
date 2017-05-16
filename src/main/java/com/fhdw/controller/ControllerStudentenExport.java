@@ -36,7 +36,7 @@ public class ControllerStudentenExport {
 
         ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(), CsvPreference.STANDARD_PREFERENCE);
 
-        String[] header = { "MatrikelID", "Vorname", "Nachname", "Geschlecht", "Email", "Geburtsdatum", "PLZ", "Ort", "Straße", "Activated", "StudienGruppenID", "Praxisfirma"};
+        String[] header = { "MatrikelID", "Vorname", "Nachname", "Geschlecht", "Email", "Geburtsdatum", "PLZ", "Ort", "Strasse", "Activated", "StudienGruppenID", "Praxisfirma"};
 
         csvWriter.writeHeader(header);
 
