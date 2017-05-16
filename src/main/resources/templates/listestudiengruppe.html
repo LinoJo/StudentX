@@ -111,7 +111,7 @@
 
                                 </thead>
                                 <tbody>
-                                <tr th:each="student : ${studenten}" th:if="${student.StudienGruppenID} == studiengruppe.StudienGruppeID">
+                                <tr th:each="student : ${studenten}" th:if="${student.StudienGruppenID} == ${studiengruppe.StudiengruppenID}" >
                                     <td th:text="${student.Vorname}">A</td>
                                     <td th:text="${student.Nachname}">A</td>
                                     </tr>                              
