@@ -59,7 +59,7 @@ public class ControllerMitarbeiter {
     }
     
     @RequestMapping(value = "/mitarbeiter/new", method = RequestMethod.POST)
-    public void saveMitarbeiter(
+    public String saveMitarbeiter(
             @RequestParam("Vorname") String Vorname,
             @RequestParam("Nachname") String Nachname,
             @RequestParam("Geschlecht") String Geschlecht,
@@ -67,7 +67,7 @@ public class ControllerMitarbeiter {
             @RequestParam("Passwort") String Passwort,
             @RequestParam("Geburtsdatum") String Geburtsdatum,
             @RequestParam("Strasse") String Strasse,
-            @RequestParam("PLZ") String PLZ,
+            @RequestParam("PLZ") Integer PLZ,
             @RequestParam("Ort") String Ort,
             @RequestParam("Position") Integer Position,
             @RequestParam("Role") Integer Role
@@ -99,7 +99,12 @@ public class ControllerMitarbeiter {
         ma.setActivated(Boolean.TRUE);
         ma.setGeschlecht(Geschlecht);
         ma.setPosition(Position);
+        ma.setStrasse(Strasse);
+        ma.setPLZ(PLZ);
+        ma.setOrt(Ort);
 
         mitarbeiterRepo.save(ma);
+
+        return "redirect:/mitarbeiter";
     }
 }
