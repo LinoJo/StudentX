@@ -5033,6 +5033,26 @@ body.skin-3 {
 
 /*****************************************/
 
+.tabelle_Studiengruppe > table {
+  max-height: 200px;
+  overflow: scroll;
+  display: block;
+  table-layout: fixed;
+}
+
+.studiengruppe_infolinks{
+  float: left;
+}
+
+.studiengruppe_inforechts{
+float: right;
+}
+
+.studieninfo_text{
+  margin-top: 5px;
+}
+
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -5090,6 +5110,23 @@ body.skin-3 {
 @media (max-width: 1310px) {
   .contact_button_trash {
     bottom: 1px;!important;
+  }
+
+  .studieninfo_text{
+    float: left;
+    width: 20%;
+  }
+
+  .tabelle_Studiengruppe{
+    float: right;
+    width: 78%;
+  }
+
+  .studiengruppe_infolinks{
+    float: none;
+  }
+  .studiengruppe_inforechts{
+    float: none;
   }
 }
 
