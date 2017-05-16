@@ -103,10 +103,12 @@
                             <p></p>
                             <address>
                                 <strong th:text="${mitarbeiter.Strasse}">Strasse</strong>
-                                <p th:text="${mitarbeiter.PLZ}">PLZ</p>
-                                <p th:text="${mitarbeiter.Ort}">Ort</p>
+                                <div>
+                                    <p th:text="${mitarbeiter.PLZ}" style="float:left;">PLZ</p>&nbsp;
+                                    <p th:text="${mitarbeiter.Ort}">Ort</p>
+                                    <p th:if="${mitarbeiter.role = 'ROLE_ADMIN'}"><strong>Administrator</strong></p>
+                                </div>
                             </address>
-                            <div th:if="${mitarbeiter.role = 'ROLE_ADMIN'}"><strong>Administrator</strong></div>
                         </div>
                         <div class="clearfix"></div>
                 </div>
@@ -163,7 +165,7 @@
                     </div>
                     <div class="form-group">
                         <label>Funktion</label>
-                        <select type="text" th:field="*{Position}" placeholder="Position" class="form-control modal-anrede">
+                        <select th:field="*{Position}" placeholder="Position" class="form-control modal-anrede">
                             <option value="1">Mitarbeiter</option>
                             <option value="2">Mentor</option>
                         </select>
@@ -187,6 +189,74 @@
     </div>
 </div> <!--Modalende Mitarbeiter hinzufügen-->
 
+<!--Modal Mitarbeiter info-->
+<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+                <i class="fa fa-user-plus modal-icon" style="float:left;"></i>
+                <h4 class="modal-title">Mitarbeiter Info bearbeiten</h4>
+                <small class="font-bold modal-smalltitle"></small>
+            </div>
+            <div style="clear:both;"></div>
+            <form method="POST" th:action="@{/mitarbeiter/update}" th:object="${newMitarbeiter}">
+                <div class="modal-body form_hinzufügen_links">
+                    <div class="form-group">
+                        <label>Anrede</label>
+                        <select th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede_edit">
+                            <option value="m">Herr</option>
+                            <option value="w">Frau</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label><input type="text" th:field="*{Nachname}" placeholder="Nachname" class="form-control modal-nachname_edit"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Vorname" th:field="*{Vorname}" class="form-control modal-vorname_edit"/>
+                    </div>
+                    <div class="form-group">
+                        <label>E-Mail</label><input type="email" th:field="*{Email}" placeholder="EMail" class="form-control modal-email_edit"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-geburstag_edit"/>
+                    </div>
+                </div>
+                <div class="modal-body form_hinzufügen_rechts">
+                    <div class="form-group">
+                        <label>Funktion</label>
+                        <select th:field="*{Position}" placeholder="Position" class="form-control modal-anrede">
+                            <option value="1">Mitarbeiter</option>
+                            <option value="2">Mentor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Adresse</label><input type="text" th:field="*{Strasse}" placeholder="Straße" class="form-control modal-strasse_edit"/>
+                    </div>
+                    <div class="form-group" style="width:30%;min-width:40px;float:left;">
+                        <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz_edit" />
+                    </div>
+                    <div class="form-group" style="width:67.5%;min-width:60px;float:right;">
+                        <input type="text" th:field="*{Ort}" placeholder="Ort" class="form-control modal-ort_edit" />
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="form-group">
+                        <label>Berechtigung</label>
+                        <select type="text" th:field="*{Role}" placeholder="Rolle" class="form-control modal-anrede">
+                            <option value="1">Anwender</option>
+                            <option value="2">Administrator</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="modal-footer" style="display:block;">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
+                    <button type="submit" class="btn btn-primary">Hinzufügen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> <!--Modalende Student Info-->
 
 
 <!-- Mainly scripts -->
