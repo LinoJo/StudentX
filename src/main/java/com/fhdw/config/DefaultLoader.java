@@ -26,10 +26,11 @@ public class DefaultLoader implements ApplicationListener<ContextRefreshedEvent>
         if(!mitarbeiterRepo.exists("admin")){
             Mitarbeiter m = new Mitarbeiter();
             m.setEmail("admin");
-            m.setVorname("Admin");
-            m.setNachname("istrator");
+            m.setVorname("Default");
+            m.setNachname("Admin");
             m.setPasswort(passwordEncoder.encode("password"));
             m.setRole(Role.ROLE_ADMIN);
+            m.setPosition(1);
 
             mitarbeiterRepo.save(m);
         }
@@ -37,10 +38,11 @@ public class DefaultLoader implements ApplicationListener<ContextRefreshedEvent>
         if(!mitarbeiterRepo.exists("user")){
             Mitarbeiter m = new Mitarbeiter();
             m.setEmail("user");
-            m.setVorname("Max");
-            m.setNachname("Mustermann");
+            m.setVorname("Default");
+            m.setNachname("User");
             m.setPasswort(passwordEncoder.encode("password"));
             m.setRole(Role.ROLE_USER);
+            m.setPosition(1);
 
             mitarbeiterRepo.save(m);
         }

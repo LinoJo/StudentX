@@ -33,73 +33,11 @@
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                <!--<form role="search" class="navbar-form-custom" method="post" action="search_results.html">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nach etwas suchen..." class="form-control" name="top-search" id="top-search"/>
-                    </div>
-                </form>-->
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
                     <span class="m-r-sm text-muted welcome-message">Willkommen in der Studentenverwaltung</span>
                 </li>
-                <!-- Benachrichtungen
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
-                    </a>
-
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a7.jpg"/>
-                                </a>
-                                <div class="media-body">
-                                    <small class="pull-right">46h ago</small>
-                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br/>
-                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html">
-                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                -->
-                <!-- Benachrichtungen
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="mailbox.html">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="profile.html">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        </ul>
-                </li>
-                -->
-
                 <li>
                     <a href="/">
                         <i class="fa fa-sign-out"></i> Abmelden
@@ -127,60 +65,27 @@
     </div>
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-            <!--Contact Start
-            <tr th:each="student : ${studenten}">
-                                    <td th:text="${student.MatrikelID}">1</td>
-                                    <td th:text="${student.Vorname}">A</td>
-                                    <td th:text="${student.Nachname}">A</td>
-                                    <td th:text="${student.StudienGruppenID}">1</td>
-                                    <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
-                                        <button type="button" th:id="${student.MatrikelID}" class="btn btn-primary delete text-cent" data-toggle="modal" data-target="#myModal" style="" onclick="modalLoadData()">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </td>
-                                    <td sec:authorize="hasRole('ROLE_ADMIN')" style="width:10px">
-                                        <button type="button" th:id="${student.MatrikelID}" class="btn btn-primary edit" data-toggle="modal" data-target="#myModal" style="" onclick="modalLoadData()">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-            -->
-
-            <!--Contact Start-->
-            <div class="col-lg-4_mitarbeiter">
-                <div class="contact-box">
-                    <button type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-primary trash contact_button_trash" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                    <a href="">
+            <!--Contact Start hinzufügen-->
+            <div class="col-lg-4_mitarbeiter" style="color: #1ab394;">
+                <a class="dropdown-toggle hinzufügen_modal" data-toggle="modal" data-target="#myModal">
+                    <div class="contact-box hover_shadow">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
+                                <i class="fa fa-user-plus img-responsive" style="font-size: 70px;color: #1ab394;"></i>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
-                            <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
+                            <h3 style="color: #1ab394;"><strong class="m-t-xs font-bold">Mitarbeiter hinzufügen</strong></h3>
                         </div>
                         <div class="clearfix"></div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
             <!--Contact Ende-->
 
             <!--Contact Start-->
-            <div class="col-lg-4_mitarbeiter">
-                <div class="contact-box">
+            <div th:each="mitarbeiter : ${allMitarbeiter}" class="col-lg-4_mitarbeiter">
+                <div class="contact-box hover_shadow">
                     <button type="button" class="btn btn-primary edit contact_button_edit" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-edit"></i>
                     </button>
@@ -190,19 +95,24 @@
                     <a href="">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"/>
-                                <div class="m-t-xs font-bold">Graphics designer</div>
+                                <i class="fa fa-user img-responsive" style="font-size: 70px;"></i>
+                                <div th:switch="${mitarbeiter.Position}">
+                                    <p th:case="1"><div class="m-t-xs font-bold">Mitarbeiter</div></p>
+                                    <p th:case="2"><div class="m-t-xs font-bold">Dozent</div></p>
+                                    <p th:case="*"><div class="m-t-xs font-bold"></div></p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <h3><strong>John Smith</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p>
+                            <h3><strong th:text="${mitarbeiter.Vorname} + ' ' + ${mitarbeiter.Nachname}">Vorname Nachname</strong></h3>
+                            <i class="fa fa-envelope">&nbsp;</i><p style = "display:inline" th:text="${mitarbeiter.Email}">Email</p>
+                            <p></p>
                             <address>
-                                <strong>Twitter, Inc.</strong><br/>
-                                795 Folsom Ave, Suite 600<br/>
-                                San Francisco, CA 94107<br/>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
+                                <strong th:text="${mitarbeiter.Strasse}">Strasse</strong>
+                                <p th:text="${mitarbeiter.PLZ}">PLZ</p>
+                                <p th:text="${mitarbeiter.Ort}">Ort</p>
                             </address>
+                            <div th:if="${mitarbeiter.role = 'ROLE_ADMIN'}"><strong>Administrator</strong></div>
                         </div>
                         <div class="clearfix"></div>
                     </a>
@@ -212,6 +122,77 @@
         </div>
     </div>
 </div>
+
+<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+                <i class="fa fa-user-plus modal-icon" style="float:left;"></i>
+                <h4 class="modal-title">Student hinzufügen</h4>
+                <small class="font-bold modal-smalltitle"></small>
+            </div>
+            <div style="clear:both;"></div>
+            <form method="POST" th:action="@{/mitarbeiter/new}" th:object="${newMitarbeiter}">
+                <div class="modal-body form_hinzufügen_links">
+                    <div class="form-group">
+                        <label>Anrede</label>
+                        <select type="text" th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede">
+                            <option value="m">Herr</option>
+                            <option value="w">Frau</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label><input type="text" th:field="*{Nachname}" placeholder="Nachname" class="form-control modal-nachname"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Vorname" th:field="*{Vorname}" class="form-control modal-vorname"/>
+                    </div>
+                    <div class="form-group">
+                        <label>E-Mail</label><input type="email" th:field="*{Email}" placeholder="EMail" class="form-control modal-email"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Passwort</label><input type="password" th:field="*{Passwort}" placeholder="Passwort" class="form-control modal-praxisfirma"/>
+                    </div>
+                </div>
+                <div class="modal-body form_hinzufügen_rechts">
+                    <div class="form-group">
+                        <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-email"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Adresse</label><input type="text" th:field="*{Strasse}" placeholder="Strasse" class="form-control modal-strasse"/>
+                    </div>
+                    <div class="form-group" style="width:30%;min-width:40px;float:left;">
+                        <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz" />
+                    </div>
+                    <div class="form-group" style="width:67.5%;min-width:60px;float:right;">
+                        <input type="text" th:field="*{Ort}" placeholder="Ort" class="form-control modal-ort" />
+                    </div>
+                    <div class="form-group">
+                        <label>Funktion</label>
+                        <select type="text" th:field="*{Position}" placeholder="Position" class="form-control modal-anrede">
+                            <option value="1">Mitarbeiter</option>
+                            <option value="2">Mentor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Berechtigung</label>
+                        <select type="text" th:field="*{Role}" placeholder="Rolle" class="form-control modal-anrede">
+                            <option value="Role.ROLE_USER">Anwender</option>
+                            <option value="Role.ROLE_ADMIN">Administrator</option>
+                        </select>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="modal-footer" style="display:block;">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
+                    <button type="submit" class="btn btn-primary">Hinzufügen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> <!--Modalende Student hinzufügen-->
 
 
 
@@ -232,53 +213,6 @@
 <script th:src="@{/js/inspinia.js}"></script>
 <script th:src="@{/js/plugins/pace/pace.min.js}"></script>
 <script th:src="@{/static/js/plugins/jquery-ui/jquery-ui.min.js}"></script>
-
-<!-- Page-Level Scripts
-
-<script>
-    $(document).ready(function() {
-        $('.dataTables-example').dataTable({
-            responsive: true,
-            "dom": 'T<"clear">lfrtip',
-            "tableTools": {
-                "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
-            }
-        });
-
-        /* Init DataTables */
-        var oTable = $('#editable').dataTable();
-
-        /* Apply the jEditable handlers to the table */
-        oTable.$('td').editable( '../example_ajax.php', {
-            "callback": function( sValue, y ) {
-                var aPos = oTable.fnGetPosition( this );
-                oTable.fnUpdate( sValue, aPos[0], aPos[1] );
-            },
-            "submitdata": function ( value, settings ) {
-                return {
-                    "row_id": this.parentNode.getAttribute('id'),
-                    "column": oTable.fnGetPosition( this )[2]
-                };
-            },
-
-            "width": "90%",
-            "height": "100%"
-        } );
-
-
-    });
-
-    function fnClickAddRow() {
-        $('#editable').dataTable().fnAddData( [
-            "Custom row",
-            "New row",
-            "New row",
-            "New row",
-            "New row" ] );
-
-    }
-</script>
--->
 
 <style>
     ::-webkit-scrollbar {

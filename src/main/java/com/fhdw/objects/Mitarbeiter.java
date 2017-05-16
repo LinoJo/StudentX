@@ -22,7 +22,7 @@ public class Mitarbeiter{
     private Date Geburtsdatum;
     private Integer PLZ;
     private String Ort;
-    private String Straße;
+    private String Strasse;
     @Length(min = 5, message = "*Dein Passwort muss 5 Zeichen lang sein")
     @NotEmpty(message = "*Bitte gib ein Passwort ein")
     private String Passwort;
@@ -33,7 +33,7 @@ public class Mitarbeiter{
 
     public Mitarbeiter(){}
 
-    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String straße, String passwort, Role role, Integer position, Boolean activated) {
+    public Mitarbeiter(String vorname, String nachname, String geschlecht, String email, Date geburtsdatum, Integer PLZ, String ort, String strasse, String passwort, Role role, Integer position, Boolean activated) {
         Vorname = vorname;
         Nachname = nachname;
         Geschlecht = geschlecht;
@@ -41,7 +41,7 @@ public class Mitarbeiter{
         Geburtsdatum = geburtsdatum;
         this.PLZ = PLZ;
         Ort = ort;
-        Straße = straße;
+        Strasse = strasse;
         Passwort = passwort;
         Role = role;
         Position = position;
@@ -104,12 +104,12 @@ public class Mitarbeiter{
         Ort = ort;
     }
 
-    public String getStraße() {
-        return Straße;
+    public String getStrasse() {
+        return Strasse;
     }
 
-    public void setStraße(String straße) {
-        Straße = straße;
+    public void setStrasse(String strasse) {
+        Strasse = strasse;
     }
 
     public String getPasswort() {
@@ -154,7 +154,7 @@ public class Mitarbeiter{
                 ", Geburtsdatum=" + Geburtsdatum +
                 ", PLZ=" + PLZ +
                 ", Ort='" + Ort + '\'' +
-                ", Straße='" + Straße + '\'' +
+                ", Strasse='" + Strasse + '\'' +
                 ", Passwort='" + Passwort + '\'' +
                 ", Role=" + Role +
                 ", Position=" + Position +

@@ -9,4 +9,7 @@ public interface IStudiengruppeService {
 	
 	List<Studiengruppe> getAll();
 
+	Long getCount();
+
+	Studiengruppe create(Studiengruppe studiengruppe);
 }

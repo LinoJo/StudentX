@@ -6,6 +6,7 @@ package com.fhdw.controller;
 
 import com.fhdw.objects.Student;
 import com.fhdw.services.domain.studenten.IStudentService;
+import com.fhdw.services.domain.studiengruppen.IStudiengruppeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -19,10 +20,14 @@ public class ControllerStudenten {
     @Autowired
     private IStudentService studentService;
 
+    @Autowired
+    private IStudiengruppeService studiengruppeService;
+
     @RequestMapping("/studenten")
     public ModelAndView studenten(){
         ModelAndView mav = new ModelAndView("listestudenten");
         mav.addObject("studenten", studentService.getAll());
+        mav.addObject("studiengruppen", studiengruppeService.getAll());
         mav.addObject("newStudent", new Student());
         return mav;
     }
@@ -31,6 +36,14 @@ public class ControllerStudenten {
     public String saveStudent(@Valid @ModelAttribute("newStudent") Student student, BindingResult result) {
         if(!result.hasErrors()){
             studentService.create(student);
+        }
+        return "redirect:/studenten";
+    }
+
+    @RequestMapping(value = "/studenten/update", method = RequestMethod.POST)
+    public String updateStudent(@Valid @ModelAttribute("updateStudent") Student student, BindingResult result) {
+        if(!result.hasErrors()){
+            //studentService.update(student);
         }
         return "redirect:/studenten";
     }
