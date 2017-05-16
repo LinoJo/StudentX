@@ -115,7 +115,6 @@
                                 <strong th:text="${mitarbeiter.Strasse}">Strasse</strong>
                                 <div>
                                     <p th:text="${mitarbeiter.PLZ} + ' '+ ${mitarbeiter.Ort}">PLZ</p>
-                                    <p th:if="${mitarbeiter.role = 'ROLE_ADMIN'}"><strong>Administrator</strong></p>
                                 </div>
                             </address>
                         </div>
