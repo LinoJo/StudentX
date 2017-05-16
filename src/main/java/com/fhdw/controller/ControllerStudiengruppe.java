@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fhdw.services.domain.studiengruppen.IStudiengruppeService;
+import com.fhdw.services.domain.studenten.IStudentService;
 
 import javax.validation.Valid;
 
@@ -17,11 +18,15 @@ import javax.validation.Valid;
 public class ControllerStudiengruppe {
 	@Autowired
     private IStudiengruppeService studiengruppeService;
+	
+	@Autowired
+	private IStudentService studentService;
 
     @RequestMapping("/studiengruppe")
     public ModelAndView studiengruppe(){
         ModelAndView mav = new ModelAndView("listestudiengruppe");
-        mav.addObject("studiengruppe", studiengruppeService.getAll());
+        mav.addObject("studiengruppen", studiengruppeService.getAll());
+        mav.addObject("studenten", studentService.getAll());
         mav.addObject("newStudiengruppe", new Studiengruppe());
         return mav;
     }
