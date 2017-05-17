@@ -47,6 +47,7 @@ public class ServerGui extends JFrame implements ActionListener {
 		stopButton = new JToggleButton("Stop StudentX");
 		stopButton.setPreferredSize(new Dimension (150,75));
 		stopButton.addActionListener(this);
+		stopButton.setEnabled(false);
 		
 		serverGuiButtonPanel = new JPanel(new GridLayout());
 		serverGuiButtonPanelTop = new JPanel(new GridBagLayout());
@@ -75,16 +76,19 @@ public class ServerGui extends JFrame implements ActionListener {
 	public void actionPerformed (ActionEvent a){
 		
 		if(a.getSource() == this.startButton){
+			if(stopButton.isSelected()){
+				stopButton.setSelected(false);
+			}
+			startButton.setEnabled(false);
 			Thread t = new Thread(){
 				public void run(){
 					StudentxApplication.start();
 					System.out.println("\n###############\nStudentX is ready to go\n###############\n");
+					stopButton.setEnabled(true);
+					startButton.setSelected(false);
 				}
 			};
 			t.start();
-			if(stopButton.isSelected()){
-				stopButton.setSelected(false);
-			}
         }
         else if(a.getSource() == this.stopButton){
         	int reply=warningMessage();
@@ -92,15 +96,17 @@ public class ServerGui extends JFrame implements ActionListener {
         		if(startButton.isSelected()){
             		startButton.setSelected(false);
             	}
+        		stopButton.setEnabled(false);
         		Thread t = new Thread(){
     				public void run(){
     					StudentxApplication.stop();
     					System.out.println("\n############\nStudentX stopped\n############\n");
+    					startButton.setEnabled(true);
+    					stopButton.setSelected(false);
     				}
     			};
     			t.start();
         	}
-        	stopButton.setSelected(false);
         }
 	}
 	
