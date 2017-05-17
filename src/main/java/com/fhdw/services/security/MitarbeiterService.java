@@ -29,4 +29,9 @@ public class MitarbeiterService implements IMitarbeiterService{
     public void delMitarbeiterByEmail(String Email) {
         mitarbeiterRepo.delete(Email);
     }
+
+    @Override
+    public void updateMitarbeiter(Mitarbeiter mitarbeiter) {
+        mitarbeiterRepo.save(mitarbeiter);
+    }
 }

@@ -115,7 +115,6 @@
                                 <strong th:text="${mitarbeiter.Strasse}">Strasse</strong>
                                 <div>
                                     <p th:text="${mitarbeiter.PLZ} + ' '+ ${mitarbeiter.Ort}">PLZ</p>
-                                    <p th:if="${mitarbeiter.role = 'ROLE_ADMIN'}"><strong>Administrator</strong></p>
                                 </div>
                             </address>
                         </div>
@@ -210,49 +209,49 @@
                 <small class="font-bold modal-smalltitle modal-id_edit"></small>
             </div>
             <div style="clear:both;"></div>
-            <form method="POST" th:action="@{/mitarbeiter/update}" th:object="${newMitarbeiter}">
+            <form method="POST" th:action="@{/mitarbeiter/update}">
                 <div class="modal-body form_hinzufügen_links">
                     <div class="form-group">
                         <label>Anrede</label>
-                        <select th:field="*{Geschlecht}" placeholder="Anrede" class="form-control modal-anrede_edit">
+                        <select name="Geschlecht" placeholder="Anrede" class="form-control modal-anrede_edit">
                             <option value="m">Herr</option>
                             <option value="w">Frau</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Name</label><input type="text" th:field="*{Nachname}" placeholder="Nachname" class="form-control modal-nachname_edit"/>
+                        <label>Name</label><input type="text" name="Nachname" placeholder="Nachname" class="form-control modal-nachname_edit"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Vorname" th:field="*{Vorname}" class="form-control modal-vorname_edit"/>
+                        <input type="text" name="Vorname" placeholder="Vorname" class="form-control modal-vorname_edit"/>
                     </div>
                     <div class="form-group">
-                        <label>E-Mail</label><input type="email" th:field="*{Email}" placeholder="EMail" class="form-control modal-email_edit"/>
+                        <label>E-Mail</label><input type="email" name="Email" placeholder="EMail" class="form-control modal-email_edit"/>
                     </div>
                     <div class="form-group">
-                        <label>Geburtstag</label><input type="date" th:field="*{Geburtsdatum}" placeholder="TT.MM.JJJJ" class="form-control modal-geburstag_edit"/>
+                        <label>Geburtstag</label><input type="date" name="Geburtsdatum" placeholder="TT.MM.JJJJ" class="form-control modal-geburstag_edit"/>
                     </div>
                 </div>
                 <div class="modal-body form_hinzufügen_rechts">
                     <div class="form-group">
                         <label>Funktion</label>
-                        <select th:field="*{Position}" placeholder="Position" class="form-control modal-position_edit">
+                        <select name="Position" placeholder="Position" class="form-control modal-position_edit">
                             <option value="1">Mitarbeiter</option>
                             <option value="2">Mentor</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Adresse</label><input type="text" th:field="*{Strasse}" placeholder="Straße" class="form-control modal-strasse_edit"/>
+                        <label>Adresse</label><input type="text" name="Strasse" placeholder="Straße" class="form-control modal-strasse_edit"/>
                     </div>
                     <div class="form-group" style="width:30%;min-width:40px;float:left;">
-                        <input type="text" th:field="*{PLZ}" placeholder="PLZ" class="form-control modal-plz_edit" />
+                        <input type="text" placeholder="PLZ" name="PLZ" class="form-control modal-plz_edit" />
                     </div>
                     <div class="form-group" style="width:67.5%;min-width:60px;float:right;">
-                        <input type="text" th:field="*{Ort}" placeholder="Ort" class="form-control modal-ort_edit" />
+                        <input type="text" placeholder="Ort" name="Ort" class="form-control modal-ort_edit" />
                     </div>
                     <div style="clear: both;"></div>
                     <div class="form-group">
                         <label>Berechtigung</label>
-                        <select type="text" th:field="*{Role}" placeholder="Rolle" class="form-control modal-role_edit">
+                        <select type="text" name="Role" placeholder="Rolle" class="form-control modal-role_edit">
                             <option value="1">Anwender</option>
                             <option value="2">Administrator</option>
                         </select>
@@ -261,7 +260,7 @@
                 <div style="clear:both;"></div>
                 <div class="modal-footer" style="display:block;">
                     <button type="button" class="btn btn-white" data-dismiss="modal">Schließen</button>
-                    <button type="submit" class="btn btn-primary">Hinzufügen</button>
+                    <button type="submit" class="btn btn-primary">Aktualisieren</button>
                 </div>
             </form>
         </div>

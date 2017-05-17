@@ -109,6 +109,51 @@ public class ControllerMitarbeiter {
         return "redirect:/mitarbeiter";
     }
 
+    @RequestMapping(value = "/mitarbeiter/update", method = RequestMethod.POST)
+    public String updateStudent(@RequestParam("Email") String Email,
+                                @RequestParam("Vorname") String Vorname,
+                                @RequestParam("Nachname") String Nachname,
+                                @RequestParam("Geschlecht") String Geschlecht,
+                                @RequestParam("Geburtsdatum") String Geburtsdatum,
+                                @RequestParam("PLZ") Integer PLZ,
+                                @RequestParam("Strasse") String Strasse,
+                                @RequestParam("Ort") String Ort,
+                                @RequestParam("Role") Integer RoleID,
+                                @RequestParam("Position") Integer PositionID
+    ){
+
+        Date dt = new Date();
+
+        DateFormat format = new SimpleDateFormat("YYYY-MM-dd");
+        try{
+            dt = format.parse(Geburtsdatum);
+        }
+        catch (ParseException e){
+
+        }
+
+        Mitarbeiter ma = mitarbeiterService.getMitarbeiterByEmail(Email);
+        ma.setVorname(Vorname);
+        ma.setNachname(Nachname);
+        ma.setGeschlecht(Geschlecht);
+        ma.setEmail(Email);
+        ma.setGeburtsdatum(dt);
+        ma.setStrasse(Strasse);
+        ma.setPLZ(PLZ);
+        ma.setOrt(Ort);
+        if (RoleID == 2){
+            ma.setRole(com.fhdw.enums.Role.ROLE_ADMIN);
+        }
+        else {
+            ma.setRole(com.fhdw.enums.Role.ROLE_USER);
+        }
+        ma.setPosition(PositionID);
+
+        mitarbeiterService.updateMitarbeiter(ma);
+
+        return "redirect:/mitarbeiter";
+    }
+
     @RequestMapping(value="/mitarbeiter/del/{Email:.+}", method=RequestMethod.GET)
     public String removeStudent(@PathVariable("Email") String Email) {
         mitarbeiterService.delMitarbeiterByEmail(Email);
