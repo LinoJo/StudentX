@@ -16,7 +16,6 @@
     <link th:href="@{/css/animate.css}" rel="stylesheet"/>
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
 
-
 </head>
 <body>
 
@@ -35,6 +34,12 @@
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
+                <!--<li>
+                    <a id="dark">Dark<i class="fa fa-xing"></i></a>
+                </li>
+                <li>
+                    <a id="normal">normal<i class="fa fa-xing"></i></a>
+                </li>-->
                 <li>
                     <form th:action="@{/logout}" method="POST">
                         <button class="btn btn-primary abmelden_button" ><i class="fa fa-sign-out"></i> Abmelden</button>
